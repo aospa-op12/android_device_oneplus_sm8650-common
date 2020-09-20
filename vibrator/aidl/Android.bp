@@ -14,7 +14,6 @@ cc_library_shared {
         "liblog",
         "libqtivibratoreffect.oplus_sm8650-richtap",
         "libqtivibratoreffectoffload.oplus_sm8650",
-        "libsoc_helper",
         "libbinder_ndk",
         "android.hardware.vibrator-V2-ndk",
     ],
