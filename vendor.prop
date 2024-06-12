@@ -116,5 +116,8 @@ persist.vendor.sensors.debug.hal=0
 # Update engine
 ro.virtual_ab.compression.threads=true
 
+# USB
+ro.usb.uvc.enabled=true
+
 # Zygote
 zygote.critical_window.minute=10
