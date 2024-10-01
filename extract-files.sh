@@ -86,6 +86,10 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             sed -i "s|/system/system_ext|/system_ext|g" "${2}"
             ;;
+        vendor/etc/seccomp_policy/atfwd@2.0.policy)
+            [ "$2" = "" ] && return 0
+            grep -q "gettid: 1" "${2}" || echo -e "\ngettid: 1" >> "${2}"
+            ;;
         odm/lib64/libAlgoProcess.so)
             [ "$2" = "" ] && return 0
             sed -i "s/android.hardware.graphics.common-V3-ndk.so/android.hardware.graphics.common-V5-ndk.so/" "${2}"
