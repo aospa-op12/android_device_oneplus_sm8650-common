@@ -1,5 +1,5 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from OnePlus 12 (CPH2581_15.0.0.305(EX01)).
+## are from OnePlus 12 (CPH2581_15.0.0.503(EX01)).
 
 # Current blobs with ELF checks disabled:
 # libOPAlgoCamFaceBeautyCap, libEIS, libHIS, libOGLManager, libarcsoft_high_dynamic_range_v4 depends on NDK libnativewindow and build is unable to resolve its symbols
@@ -315,6 +315,7 @@ odm/etc/camera/dng/D65HUESATMap_ov64b40_tele.txt
 odm/etc/camera/dng/ToneCurve_imx581.txt
 odm/etc/camera/dng/ToneCurve_lyt808.txt
 odm/etc/camera/dng/ToneCurve_ov64b40_tele.txt
+odm/etc/camera/eeprom_ov64b40_sem1217s.bin
 odm/etc/camera/eis_camera.vcfg
 odm/etc/camera/facesr_hd_composite_ff_ref_4.3.19_qcom8650_qnn_segqnn_qualitybin.model
 odm/etc/camera/fb_default
@@ -483,6 +484,9 @@ odm/etc/camera/filters_lut/ByW7g4bbf
 odm/etc/camera/filters_lut/ByYo3If
 odm/etc/camera/filters_lut/BycYf7WWz
 odm/etc/camera/filters_lut/Cold.cube.rgb.bin
+odm/etc/camera/filters_lut/DL_A_MoneyBall.bin
+odm/etc/camera/filters_lut/DL_B_Inception.bin
+odm/etc/camera/filters_lut/DL_C_R3_80.bin
 odm/etc/camera/filters_lut/DL_D_G4.cube.rgb.bin
 odm/etc/camera/filters_lut/DL_L_B6.cube.rgb.bin
 odm/etc/camera/filters_lut/Delta400.3dl.rgb.bin
@@ -547,6 +551,9 @@ odm/etc/camera/filters_lut/filters_lut/ByW7g4bbf
 odm/etc/camera/filters_lut/filters_lut/ByYo3If
 odm/etc/camera/filters_lut/filters_lut/BycYf7WWz
 odm/etc/camera/filters_lut/filters_lut/Cold.cube.rgb.bin
+odm/etc/camera/filters_lut/filters_lut/DL_A_MoneyBall.bin
+odm/etc/camera/filters_lut/filters_lut/DL_B_Inception.bin
+odm/etc/camera/filters_lut/filters_lut/DL_C_R3_80.bin
 odm/etc/camera/filters_lut/filters_lut/DL_D_G4.cube.rgb.bin
 odm/etc/camera/filters_lut/filters_lut/DL_L_B6.cube.rgb.bin
 odm/etc/camera/filters_lut/filters_lut/Emerald.cube.rgb.bin
@@ -847,8 +854,10 @@ odm/etc/camera/meishe_lut/kodak.cube.rgb.bin
 odm/etc/camera/meishe_lut/meicam.child.bin
 odm/etc/camera/meishe_lut/mono.cube.rgb.bin
 odm/etc/camera/meishe_lut/morandi.cube.rgb.bin
+odm/etc/camera/meishe_lut/morning.dream.cube.rgb.bin
 odm/etc/camera/meishe_lut/natural.cube.rgb.bin
 odm/etc/camera/meishe_lut/neon-2020.cube.rgb.bin
+odm/etc/camera/meishe_lut/nostalgic.scene.cube.rgb.bin
 odm/etc/camera/meishe_lut/oplus-black-gold.cube.rgb.bin
 odm/etc/camera/meishe_lut/oplus-cyberpunk.cube.rgb.bin
 odm/etc/camera/meishe_lut/oplus-nightcity.cube.rgb.bin
@@ -1455,7 +1464,6 @@ odm/lib64/libFaceBeautyPICap.so
 odm/lib64/libFaceBeautyPre.so
 odm/lib64/libFaceDistortionCorrection.so
 odm/lib64/libFilterWrapper.so
-odm/lib64/libGaiaClient.so
 odm/lib64/libGaiaClient_vnd.so
 odm/lib64/libHDRDetection.so
 odm/lib64/libHIS.so;DISABLE_CHECKELF
@@ -1491,9 +1499,7 @@ odm/lib64/libUpScale.so
 odm/lib64/libVDBayerHDR.so
 odm/lib64/libVDBlurless.so;FIX_SONAME
 odm/lib64/libVDExternal.so
-odm/lib64/libVDPostureDetection.so
 odm/lib64/libVDSuperPhotoAPI.so;FIX_SONAME
-odm/lib64/libVDUpScale.so
 odm/lib64/libWaterMark.so
 odm/lib64/libXDocProcessSDK.so
 odm/lib64/libYTCommon.so
@@ -1774,6 +1780,7 @@ vendor/lib64/camera/components/com.qti.node.swhme.so
 vendor/lib64/camera/components/com.qti.node.swlsc.so
 vendor/lib64/camera/components/com.qti.node.swmctf.so
 vendor/lib64/camera/components/com.qti.node.swpdpc.so
+vendor/lib64/camera/components/com.qti.node.swpnc.so
 vendor/lib64/camera/components/com.qti.node.swpreprocess.so
 vendor/lib64/camera/components/com.qti.node.swregistration.so
 vendor/lib64/camera/components/com.qti.node.swvrt.so
@@ -1916,11 +1923,13 @@ vendor/lib64/libmmcamera_lscv35.so
 vendor/lib64/libmmcamera_mfnr.so
 vendor/lib64/libmmcamera_mfnr_t4.so
 vendor/lib64/libmmcamera_pdpc.so
+vendor/lib64/libmmcamera_pnc.so
 vendor/lib64/libnanopb.so
 vendor/lib64/libopencv.so
 vendor/lib64/libopencv3a.so
 vendor/lib64/libopestriping.so
 vendor/lib64/libos.so
+vendor/lib64/libpnc_cl_program.bin
 vendor/lib64/libqll.so
 vendor/lib64/libqll10.so
 vendor/lib64/libqllengine.so
@@ -2800,15 +2809,16 @@ odm/lib64/libosenseaidlhalclient.so
 odm/lib64/libosensenativeproxy_client.so
 
 # OPLUS Charger
-odm/bin/hw/vendor.oplus.hardware.charger-V5-service
+odm/bin/hw/vendor.oplus.hardware.charger-V6-service
 odm/bin/hw/wlschgd
-odm/etc/init/vendor.oplus.hardware.charger-V5-service.rc
-odm/etc/permissions/vendor-oplus-hardware-charger.xml
+odm/etc/charge.cfg
+odm/etc/init/vendor.oplus.hardware.charger-V6-service.rc
 odm/etc/vintf/manifest/manifest_oplus_charger_aidl.xml
-odm/lib64/vendor.oplus.hardware.charger-V5-ndk.so
+odm/lib64/vendor.oplus.hardware.charger-V6-ndk.so
+odm/etc/permissions/vendor-oplus-hardware-charger.xml
 odm/lib64/vendor.oplus.hardware.charger@1.0.so
 system_ext/framework/vendor.oplus.hardware.charger-V1-java.jar
-system_ext/framework/vendor.oplus.hardware.charger-V5-java.jar
+system_ext/framework/vendor.oplus.hardware.charger-V6-java.jar
 
 # OPLUS Charger firmware
 odm/firmware/fastchg/22877/bms_heating_config.txt
@@ -2841,7 +2851,10 @@ vendor/lib64/vendor.oplus.hardware.displaypanelfeature-V1-ndk.so;MODULE_SUFFIX=_
 # OPLUS Performance
 odm/bin/hw/vendor-oplus-hardware-performance-V1-service
 odm/etc/init/vendor-oplus-hardware-performance-V1-service.rc
+odm/etc/uah/uahconfig.pb
 odm/etc/vintf/manifest/manifest_performance_aidl.xml
+odm/lib64/liboplus-uah-client.so
+odm/lib64/libuahcore.so
 odm/lib64/vendor.oplus.hardware.performance-V1-ndk.so
 odm/lib64/vendor.oplus.hardware.performance-V2-ndk.so
 odm/lib64/vendor.oplus.hardware.performance-V3-ndk.so
@@ -3147,6 +3160,8 @@ vendor/etc/vintf/manifest/vendor.qti.hardware.radio.qtiradioconfig.xml
 vendor/lib64/deviceInfoServiceModuleNr.so
 vendor/lib64/libQtiRilLoadable.so
 vendor/lib64/liblqe.so
+vendor/lib64/libprotobuf-cpp-full-21.7.so
+vendor/lib64/libprotobuf-cpp-lite-21.7.so
 vendor/lib64/libqcrilDataModule.so
 vendor/lib64/libqcrilNr.so
 vendor/lib64/libqcrilNrCellInfoModule.so
@@ -3203,7 +3218,7 @@ vendor/lib64/qtiril-utils.so
 vendor/lib64/qtiwakelock.so
 vendor/lib64/vendor.oplus.hardware.appradioaidl-V1-ndk.so
 vendor/lib64/vendor.oplus.hardware.communicationcenter-V2-ndk.so;MODULE_SUFFIX=_vendor
-vendor/lib64/vendor.oplus.hardware.radio-V2-ndk_platform.so
+vendor/lib64/vendor.oplus.hardware.radio-V2-ndk.so
 vendor/lib64/vendor.qti.hardware.data.connection@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.data.connection@1.1.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.data.connectionaidl-V1-ndk.so
