@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021-2024 The LineageOS Project
+# Copyright (C) 2021-2025 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -420,10 +420,6 @@ PRODUCT_COPY_FILES += \
 # PowerShare
 PRODUCT_PACKAGES += \
     vendor.lineage.powershare@1.0-service.oplus
-
-# Protobuf
-PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full-3.9.1-vendorcompat
 
 # QCOM
 TARGET_BOARD_PLATFORM := pineapple
