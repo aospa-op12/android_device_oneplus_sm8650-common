@@ -26,6 +26,10 @@ on boot
     chmod 0666 /sys/devices/platform/soc/soc:sensor_fb/adsp_notify
     chmod 0666 /dev/oplus_consumer_ir
 
+    # Wireless Charging
+    chown system system /proc/wireless/enable_tx
+    chmod 0666 /proc/wireless/enable_tx
+
 on post-fs-data
     # ADSP ramdump
     mkdir /data/vendor/mmdump 0777 system system
