@@ -3,6 +3,11 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
+sh_binary_host {
+    name: "generate_qcril_db",
+    src: "generate_qcril_db.sh",
+}
+
 prebuilt_etc {
     name: "0015.1_config.sql",
     src: "0015.1_config.sql",
