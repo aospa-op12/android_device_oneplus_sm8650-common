@@ -217,7 +217,6 @@ service fan_control_turn_off /vendor/bin/fan_service 0
     oneshot
 
 on property:vendor.post_boot.parsed=1
-
     # Uclamp tunings
     setprop kernel.sched_util_clamp_min_rt_default 0
     write /proc/sys/kernel/sched_util_clamp_min_rt_default 0
@@ -251,19 +250,3 @@ on property:vendor.post_boot.parsed=1
     write /dev/cpuctl/camera-daemon/cpu.uclamp.max max
     write /dev/cpuctl/camera-daemon/cpu.uclamp.min 50
     write /dev/cpuctl/camera-daemon/cpu.uclamp.latency_sensitive 1
-
-    # Switch to schedutil
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor schedutil
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor schedutil
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor schedutil
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor schedutil
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor schedutil
-    write /sys/devices/system/cpu/cpu5/cpufreq/scaling_governor schedutil
-    write /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor schedutil
-    write /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor schedutil
-    write /proc/sys/kernel/sched_pelt_multiplier 1
-    write /proc/sys/kernel/sched_schedstats 0
-    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/rate_limit_us 2000
-    write /sys/devices/system/cpu/cpufreq/policy2/schedutil/rate_limit_us 2000
-    write /sys/devices/system/cpu/cpufreq/policy5/schedutil/rate_limit_us 2000
-    write /sys/devices/system/cpu/cpufreq/policy7/schedutil/rate_limit_us 2000
