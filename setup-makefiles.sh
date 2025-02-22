@@ -62,9 +62,13 @@ function lib_to_package_fixup_vendor_variants() {
             vendor.qti.diaghal@1.0 | \
             vendor.qti.hardware.dpmservice@1.0 | \
             vendor.qti.hardware.dpmaidlservice-V1-ndk | \
+            vendor.qti.hardware.iop@1.0 | \
+            vendor.qti.hardware.iop@2.0 | \
+            vendor.qti.hardware.perf2-V1-ndk | \
             vendor.qti.hardware.qccsyshal@1.0 | \
             vendor.qti.hardware.qccsyshal@1.1 | \
             vendor.qti.hardware.qccsyshal@1.2 | \
+            vendor.qti.hardware.servicetrackeraidl-V1-ndk | \
             vendor.qti.hardware.wifidisplaysession@1.0 | \
             vendor.qti.imsrtpservice@3.0 | \
             vendor.qti.imsrtpservice@3.1 | \
