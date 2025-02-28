@@ -1,3 +1,12 @@
+# Display
+ro.vendor.display.sensortype=2
+vendor.display.force_lm_to_fb_config=1
+vendor.display.force_tonemapping=1
+vendor.display.gpu_rendering=true
+vendor.display.smomo_game_support=0
+vendor.display.scaling_dest_opt_mode=4
+vendor.display.scaling_source_opt_mode=4
+
 # RKPD
 remote_provisioning.enable_rkpd=true
 remote_provisioning.hostname=remoteprovisioning.googleapis.com
