@@ -120,7 +120,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_ODM_PROPERTIES += \
     persist.sys.sf.color_mode=0 \
     vendor.display.disable_hw_recovery_dump=1 \
-    vendor.display.enable_hdr10_gpu_target=0
+    vendor.display.enable_hdr10_gpu_target=0 \
+    vendor.display.enable_fb_scaling=1
 
 # DRM
 PRODUCT_PACKAGES += \

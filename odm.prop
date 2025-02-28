@@ -17,6 +17,7 @@ ro.camera.notify_nfc=1
 
 # Display
 persist.vendor.display.pxlw.iris_feature=0x417f0780
+vendor.display.disable_spec_fence=1
 
 # Radio
 persist.vendor.radio.virtualcomm=1
