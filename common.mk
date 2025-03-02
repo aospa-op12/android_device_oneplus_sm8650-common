@@ -473,7 +473,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service.oplus_sm8650
 
-$(call soong_config_set,qti_vibrator,use_effect_stream,true)
 $(call soong_config_set,qti_vibrator,use_effect_stream_strength,true)
 
 PRODUCT_COPY_FILES += \
