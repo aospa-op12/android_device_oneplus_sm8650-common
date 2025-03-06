@@ -248,6 +248,7 @@ SPAMMY_LOG_TAGS := \
     CCodecBuffers \
     CCodecConfig \
     Codec2Client \
+    tftp_server \
     COMU
 
 ifneq ($(TARGET_BUILD_VARIANT),eng)
