@@ -2,7 +2,7 @@ Common_CFlags = ["-Wall"]
 Common_CFlags += ["-Werror"]
 
 cc_library_shared {
-    name: "vendor.qti.hardware.vibrator.impl",
+    name: "vendor.qti.hardware.vibrator.impl.oplus_sm8650",
     vendor: true,
     srcs: [
         "Vibrator.cpp",
@@ -12,8 +12,8 @@ cc_library_shared {
         "libcutils",
         "libutils",
         "liblog",
-        "libqtivibratoreffect",
-        "libqtivibratoreffectoffload",
+        "libqtivibratoreffect.oplus_sm8650-richtap",
+        "libqtivibratoreffectoffload.oplus_sm8650",
         "libsoc_helper",
         "libbinder_ndk",
         "android.hardware.vibrator-V2-ndk",
@@ -22,12 +22,12 @@ cc_library_shared {
 }
 
 cc_binary {
-    name: "vendor.qti.hardware.vibrator.service",
+    name: "vendor.qti.hardware.vibrator.service.oplus_sm8650",
     vendor: true,
     relative_install_path: "hw",
-    init_rc: ["vendor.qti.hardware.vibrator.service.rc"],
+    init_rc: ["vendor.qti.hardware.vibrator.service.oplus_sm8650.rc"],
     vintf_fragments: [
-        "vendor.qti.hardware.vibrator.service.xml",
+        "vendor.qti.hardware.vibrator.service.oplus_sm8650.xml",
     ],
     srcs: [
         "service.cpp",
@@ -38,6 +38,6 @@ cc_binary {
         "libbase",
         "libbinder_ndk",
         "android.hardware.vibrator-V2-ndk",
-        "vendor.qti.hardware.vibrator.impl",
+        "vendor.qti.hardware.vibrator.impl.oplus_sm8650",
     ],
 }
