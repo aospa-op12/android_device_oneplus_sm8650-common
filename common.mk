@@ -205,6 +205,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.identity-V5-ndk.vendor
 
+# Kernel
+TARGET_USES_KERNEL_PLATFORM := false
+
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.hardware_keystore.xml \
@@ -405,7 +408,9 @@ PRODUCT_SHIPPING_API_LEVEL := $(BOARD_SHIPPING_API_LEVEL)
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/oplus
+    hardware/oplus \
+    kernel/oneplus/sm8650 \
+    kernel/oneplus/sm8650-modules
 
 # Storage
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
