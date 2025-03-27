@@ -419,9 +419,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 PRODUCT_PACKAGES += \
     OplusEuicc
 
-PRODUCT_PACKAGES += \
-    qcrilNrDb_vendor
-
 ifeq ($(TARGET_DISABLES_GMS),true)
 PRODUCT_PACKAGES += \
     OpenEUICC
