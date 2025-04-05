@@ -3092,7 +3092,7 @@ vendor/lib64/libqvrcameraplayback.so
 vendor/lib64/libqvrservice.so;DISABLE_DEPS
 vendor/lib64/libqvrservice_client.qti.so
 vendor/lib64/libtracker_6dof_impl.so
-vendor/lib64/vendor.qti.hardware.qxr-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.qxr-V1-ndk.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.qegahal-V1-ndk_platform.so
 
 # RIL

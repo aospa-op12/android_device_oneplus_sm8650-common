@@ -116,6 +116,7 @@ function lib_to_package_fixup_vendor_variants() {
             vendor.qti.hardware.qccsyshal@1.0 | \
             vendor.qti.hardware.qccsyshal@1.1 | \
             vendor.qti.hardware.qccsyshal@1.2 | \
+            vendor.qti.hardware.qxr-V1-ndk | \
             vendor.qti.hardware.radio.am@1.0 | \
             vendor.qti.hardware.radio.ims@1.0 | \
             vendor.qti.hardware.radio.ims@1.1 | \
