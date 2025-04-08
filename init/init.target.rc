@@ -225,12 +225,12 @@ on property:vendor.post_boot.parsed=1
 
     #top-app
     write /dev/cpuctl/top-app/cpu.uclamp.max max
-    write /dev/cpuctl/top-app/cpu.uclamp.min 10
+    write /dev/cpuctl/top-app/cpu.uclamp.min 0
     write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 0
 
     #foreground
     write /dev/cpuctl/foreground/cpu.uclamp.max 80
-    write /dev/cpuctl/foreground/cpu.uclamp.min 20
+    write /dev/cpuctl/foreground/cpu.uclamp.min 10
     write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 0
 
     #background
@@ -262,9 +262,4 @@ on property:vendor.post_boot.parsed=1
     write /sys/devices/system/cpu/cpu5/cpufreq/scaling_governor schedutil
     write /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor schedutil
     write /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor schedutil
-    write /proc/sys/kernel/sched_pelt_multiplier 1
     write /proc/sys/kernel/sched_schedstats 0
-    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/rate_limit_us 2000
-    write /sys/devices/system/cpu/cpufreq/policy2/schedutil/rate_limit_us 2000
-    write /sys/devices/system/cpu/cpufreq/policy5/schedutil/rate_limit_us 2000
-    write /sys/devices/system/cpu/cpufreq/policy7/schedutil/rate_limit_us 2000
