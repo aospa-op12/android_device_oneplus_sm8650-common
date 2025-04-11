@@ -1,9 +1,9 @@
-on late-init
+on boot
     chown system system /sys/class/qcom-haptics/primitive_duration
     chmod 0600 /sys/class/qcom-haptics/primitive_duration
 
 service vendor.qti.vibrator /vendor/bin/hw/vendor.qti.hardware.vibrator.service.oplus_sm8650
-    class hal
+    class late_start
     user system
     group system input
 
