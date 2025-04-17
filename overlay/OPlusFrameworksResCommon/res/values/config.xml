@@ -25,29 +25,41 @@
          values grouped as { targetAmplitude (within [0,255]), duration (in milliseconds) }
      -->
     <array name="config_defaultNotificationVibeWaveform">
-        <item>33</item>
+        <item>0.129</item>
+        <item>150</item>
         <item>50</item>
-        <item>51</item>
+        <item>0.2</item>
+        <item>175</item>
         <item>50</item>
-        <item>75</item>
+        <item>0.294</item>
+        <item>200</item>
         <item>50</item>
-        <item>113</item>
+        <item>0.443</item>
+        <item>225</item>
         <item>50</item>
-        <item>170</item>
+        <item>0.667</item>
+        <item>250</item>
         <item>50</item>
-        <item>255</item>
+        <item>1.0</item>
+        <item>300</item>
         <item>100</item>
+        <item>0.0</item>
         <item>0</item>
         <item>350</item>
-        <item>38</item>
+        <item>0.149</item>
+        <item>200</item>
         <item>25</item>
-        <item>62</item>
+        <item>0.243</item>
+        <item>225</item>
         <item>25</item>
-        <item>100</item>
+        <item>0.392</item>
+        <item>250</item>
         <item>25</item>
-        <item>160</item>
+        <item>0.627</item>
+        <item>275</item>
         <item>25</item>
-        <item>255</item>
+        <item>1.0</item>
+        <item>300</item>
         <item>200</item>
     </array>
 
@@ -59,29 +71,41 @@
          values grouped as { targetAmplitude (within [0,255]), duration (in milliseconds) }
      -->
     <array name="config_notificationFallbackVibeWaveform">
-        <item>33</item>
+        <item>0.129</item>
+        <item>150</item>
         <item>50</item>
-        <item>51</item>
+        <item>0.2</item>
+        <item>175</item>
         <item>50</item>
-        <item>75</item>
+        <item>0.294</item>
+        <item>200</item>
         <item>50</item>
-        <item>113</item>
+        <item>0.443</item>
+        <item>225</item>
         <item>50</item>
-        <item>170</item>
+        <item>0.667</item>
+        <item>250</item>
         <item>50</item>
-        <item>255</item>
+        <item>1.0</item>
+        <item>300</item>
         <item>100</item>
+        <item>0.0</item>
         <item>0</item>
         <item>350</item>
-        <item>38</item>
+        <item>0.149</item>
+        <item>200</item>
         <item>25</item>
-        <item>62</item>
+        <item>0.243</item>
+        <item>225</item>
         <item>25</item>
-        <item>100</item>
+        <item>0.392</item>
+        <item>250</item>
         <item>25</item>
-        <item>160</item>
+        <item>0.627</item>
+        <item>275</item>
         <item>25</item>
-        <item>255</item>
+        <item>1.0</item>
+        <item>300</item>
         <item>200</item>
     </array>
 
