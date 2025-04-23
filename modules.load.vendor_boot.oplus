@@ -2,7 +2,6 @@ boot_mode.ko
 buildvariant.ko
 cdt_integrity.ko
 device_info.ko
-gunyah_qcom.ko
 kernel_fb.ko
 olc.ko
 oplusboot.ko
@@ -15,9 +14,4 @@ oplus_network_oem_qmi.ko
 oplus_power_notifier.ko
 oplus_storage_log.ko
 oplus_uprobe.ko
-qcom_logbuf_boot_log.ko
-qcom_logbuf_vendor_hooks.ko
-qcom_va_minidump.ko
-qpnp-power-on.ko
-qrtr-gunyah.ko
 test-kit.ko

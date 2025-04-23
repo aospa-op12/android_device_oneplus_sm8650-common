@@ -2,7 +2,6 @@ aw8697.ko
 boot_mode.ko
 buildvariant.ko
 cdt_integrity.ko
-gunyah_qcom.ko
 haptic_feedback.ko
 haptic.ko
 horae_shell_temp.ko
@@ -74,9 +73,4 @@ oplus_trackpoint_report.ko
 oplus_uprobe.ko
 oplus_wireless_pen.ko 
 qbridge.ko
-qcom_logbuf_boot_log.ko
-qcom_logbuf_vendor_hooks.ko
-qcom_va_minidump.ko
-qpnp-power-on.ko
-qrtr-gunyah.ko
 test-kit.ko
