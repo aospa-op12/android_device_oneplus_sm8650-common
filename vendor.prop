@@ -117,6 +117,7 @@ persist.vendor.sensors.debug.hal=0
 ro.virtual_ab.compression.threads=true
 
 # USB
+ro.usb.uvc.disable_video_encode_flag=true
 ro.usb.uvc.enabled=true
 
 # Zygote
