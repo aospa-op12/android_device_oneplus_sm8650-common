@@ -469,8 +469,8 @@ PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
 # USB
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/usb/usb_compositions.conf:$(TARGET_COPY_OUT_ODM)/etc/usb_compositions.conf
+PRODUCT_PACKAGES += \
+    oplus_usb_compositions.conf
 
 # Verified Boot
 PRODUCT_COPY_FILES += \
