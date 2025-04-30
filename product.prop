@@ -7,9 +7,6 @@ vendor.display.smomo_game_support=0
 vendor.display.scaling_dest_opt_mode=4
 vendor.display.scaling_source_opt_mode=4
 
-# LMKD
-ro.vendor.lmk.force_inkernel_lmk=true
-
 # RKPD
 remote_provisioning.enable_rkpd=true
 remote_provisioning.hostname=remoteprovisioning.googleapis.com
