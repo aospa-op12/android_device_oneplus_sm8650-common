@@ -419,7 +419,8 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/oplus \
     kernel/oneplus/sm8650 \
-    kernel/oneplus/sm8650-modules
+    kernel/oneplus/sm8650-modules \
+    vendor/savitech/lhdc/6.1
 
 # Storage
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
