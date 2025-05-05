@@ -36,6 +36,8 @@
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof(*(a)))
 
 #include "generated_effect.h"
+#include <android-base/properties.h>
+#include <string>
 
 static const int8_t primitive_0[] = {
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -82,7 +84,11 @@ static const struct effect_stream primitives[] = {
 
 const struct effect_stream *get_effect_stream(uint32_t effect_id)
 {
+    using android::base::GetProperty;
     int i;
+    std::string profile = GetProperty("persist.vendor.haptic_profile", "richtap");
+    const struct effect_stream *selected_effects = effects;
+    size_t effects_size = ARRAY_SIZE(effects);
 
     if ((effect_id & 0x8000) != 0) {
         effect_id = effect_id & 0x7fff;
@@ -92,9 +98,17 @@ const struct effect_stream *get_effect_stream(uint32_t effect_id)
                 return &primitives[i];
         }
     } else {
-        for (i = 0; i < ARRAY_SIZE(effects); i++) {
-            if (effect_id == effects[i].effect_id)
-                return &effects[i];
+        if (profile == "crisp") {
+            selected_effects = effects_crisp;
+	    effects_size = ARRAY_SIZE(effects_crisp);
+        } else if (profile == "gentle") {
+            selected_effects = effects_gentle;
+	    effects_size = ARRAY_SIZE(effects_gentle);
+        }
+
+        for (i = 0; i < effects_size; i++) {
+            if (effect_id == selected_effects[i].effect_id)
+                return &selected_effects[i];
         }
     }
 
