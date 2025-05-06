@@ -35,7 +35,7 @@
 
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof(*(a)))
 
-#include "generated_effects.h"
+#include "generated_effect.h"
 
 static const int8_t primitive_0[] = {
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -92,27 +92,11 @@ const struct effect_stream *get_effect_stream(uint32_t effect_id)
                 return &primitives[i];
         }
     } else {
-        return get_effect_stream_strength(effect_id, 2);
+        for (i = 0; i < ARRAY_SIZE(effects); i++) {
+            if (effect_id == effects[i].effect_id)
+                return &effects[i];
+        }
     }
 
     return NULL;
-}
-
-
-const struct effect_stream *
-get_effect_stream_strength(uint32_t effect_id, uint8_t strength)
-{
-    const struct effect_stream *stream;
-
-    if (effect_id >= ARRAY_SIZE(effects))
-        return NULL;
-
-    if (strength >= ARRAY_SIZE(effects_click))
-        return NULL;
-
-    stream = effects[effect_id];
-    if (!stream)
-        return NULL;
-
-    return &stream[strength];
 }
