@@ -4,7 +4,7 @@ Common_CFlags += ["-Werror"]
 cc_library_shared {
     name: "vendor.qti.hardware.vibrator.impl.oplus_sm8650",
     vendor: true,
-    cflags: Common_CFlags + ["-DUSE_EFFECT_STREAM"] + ["-DUSE_EFFECT_STREAM_STRENGTH"],
+    cflags: Common_CFlags + ["-DUSE_EFFECT_STREAM"],
     srcs: [
         "Vibrator.cpp",
         "VibratorOffload.cpp",

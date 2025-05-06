@@ -40,7 +40,4 @@ struct effect_stream {
 
 const struct effect_stream *get_effect_stream(uint32_t effect_id);
 
-const struct effect_stream *
-get_effect_stream_strength(uint32_t effect_id, uint8_t strength);
-
 #endif
