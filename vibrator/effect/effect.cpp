@@ -51,12 +51,12 @@ static const int8_t primitive_1[] = {
     -113, -104, -93,  -80, -66, -51, -35, -18, -1,
 };
 
-static const int8_t primitive_2[] = {
-    17,  34,  50,  65,  79,  92,  103, 112, 119, 124,
-    127, 127, 126, 122, 116, 108, 98,  86,  73,  58,
-    42,  26,  9,   -8,  -25, -41, -57, -72, -85, -97,
-    -108, -116, -122, -126, -127, -127, -125, -120,
-    -113, -104, -93,  -80, -66, -51, -35, -18, -1,
+static const int8_t primitive_1_gentle[] = {
+     0,  10,  16,  22,  28,  33,  38,  43,  47,  51,
+    55,  59,  62,  65,  68,  71,  73,  75,  77,  78,
+    79,  80,  80,  80,  80,  79,  78,  77,  75,  73,
+    71,  68,  65,  62,  59,  55,  51,  47,  43,  38,
+    33,  28,  22,  16,  10,   5,   0,  -5, -10
 };
 
 static const struct effect_stream primitives[] = {
@@ -76,41 +76,65 @@ static const struct effect_stream primitives[] = {
 
     {
         .effect_id = 2,
-        .length = ARRAY_SIZE(primitive_2),
+        .length = ARRAY_SIZE(primitive_1),
         .play_rate_hz = 8000,
-        .data = primitive_2,
+        .data = primitive_1,
     },
 };
 
-const struct effect_stream *get_effect_stream(uint32_t effect_id)
-{
+static const struct effect_stream primitives_gentle[] = {
+    {
+        .effect_id = 0,
+        .length = ARRAY_SIZE(primitive_0),
+        .play_rate_hz = 8000,
+        .data = primitive_0,
+    },
+
+    {
+        .effect_id = 1,
+        .length = ARRAY_SIZE(primitive_1_gentle),
+        .play_rate_hz = 8000,
+        .data = primitive_1_gentle,
+    },
+
+    {
+        .effect_id = 2,
+        .length = ARRAY_SIZE(primitive_1_gentle),
+        .play_rate_hz = 8000,
+        .data = primitive_1_gentle,
+    },
+};
+
+const struct effect_stream* find_effect(const struct effect_stream* arr, size_t size, uint32_t effect_id) {
+    for (size_t i = 0; i < size; ++i) {
+        if (effect_id == arr[i].effect_id)
+            return &arr[i];
+    }
+    return NULL;
+}
+
+const struct effect_stream* get_effect_stream(uint32_t effect_id) {
     using android::base::GetProperty;
-    int i;
-    std::string profile = GetProperty("persist.vendor.haptic_profile", "richtap");
     const struct effect_stream *selected_effects = effects;
     size_t effects_size = ARRAY_SIZE(effects);
+    std::string profile = GetProperty("persist.vendor.haptic_profile", "richtap");
 
     if ((effect_id & 0x8000) != 0) {
-        effect_id = effect_id & 0x7fff;
-
-        for (i = 0; i < ARRAY_SIZE(primitives); i++) {
-            if (effect_id == primitives[i].effect_id)
-                return &primitives[i];
-        }
-    } else {
-        if (profile == "crisp") {
-            selected_effects = effects_crisp;
-	    effects_size = ARRAY_SIZE(effects_crisp);
-        } else if (profile == "gentle") {
-            selected_effects = effects_gentle;
-	    effects_size = ARRAY_SIZE(effects_gentle);
-        }
-
-        for (i = 0; i < effects_size; i++) {
-            if (effect_id == selected_effects[i].effect_id)
-                return &selected_effects[i];
+        effect_id &= 0x7fff;
+        if (profile == "gentle") {
+            return find_effect(primitives_gentle, ARRAY_SIZE(primitives_gentle), effect_id);
+        } else {
+            return find_effect(primitives, ARRAY_SIZE(primitives), effect_id);
         }
     }
 
-    return NULL;
+    if (profile == "crisp") {
+        selected_effects = effects_crisp;
+        effects_size = ARRAY_SIZE(effects_crisp);
+    } else if (profile == "gentle") {
+        selected_effects = effects_gentle;
+        effects_size = ARRAY_SIZE(effects_gentle);
+    }
+
+    return find_effect(selected_effects, effects_size, effect_id);
 }
