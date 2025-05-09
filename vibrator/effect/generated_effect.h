@@ -1572,7 +1572,7 @@ static const int8_t effect_5_op13crisp[] = {
 static const struct effect_stream effects_op13crisp[] = {
     {
         /* CLICK */
-        .effect_id = 0,
+        .effect_id = 1,
         .length = ARRAY_SIZE(effect_0_op13crisp),
         .play_rate_hz = 24000,
         .data = effect_0_op13crisp,
@@ -1580,7 +1580,7 @@ static const struct effect_stream effects_op13crisp[] = {
 
     {
         /* DOUBLE_CLICK */
-        .effect_id = 1,
+        .effect_id = 0,
         .length = ARRAY_SIZE(effect_1_op13crisp),
         .play_rate_hz = 24000,
         .data = effect_1_op13crisp,
