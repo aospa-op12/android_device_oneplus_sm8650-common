@@ -121,7 +121,7 @@ const struct effect_stream* get_effect_stream(uint32_t effect_id) {
 
     if ((effect_id & 0x8000) != 0) {
         effect_id &= 0x7fff;
-        if (profile == "gentle") {
+        if (profile == "gentle" || profile == "op13gentle") {
             return find_effect(primitives_gentle, ARRAY_SIZE(primitives_gentle), effect_id);
         } else {
             return find_effect(primitives, ARRAY_SIZE(primitives), effect_id);
@@ -134,6 +134,12 @@ const struct effect_stream* get_effect_stream(uint32_t effect_id) {
     } else if (profile == "gentle") {
         selected_effects = effects_gentle;
         effects_size = ARRAY_SIZE(effects_gentle);
+    } else if (profile == "op13crisp") {
+        selected_effects = effects_op13crisp;
+        effects_size = ARRAY_SIZE(effects_op13crisp);
+    } else if (profile == "op13gentle") {
+        selected_effects = effects_op13gentle;
+        effects_size = ARRAY_SIZE(effects_op13gentle);
     }
 
     return find_effect(selected_effects, effects_size, effect_id);
