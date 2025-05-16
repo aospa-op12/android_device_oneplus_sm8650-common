@@ -149,14 +149,12 @@ odm/vendor/firmware/antdtx.mdt
 odm/lib64/lib_lvacfs.so
 odm/lib64/liblvacfs_wrapper.so
 odm/lib64/libtfa98xx.so
-vendor/bin/qsap_voiceui
 vendor/etc/models/acd/environment.eai
 vendor/etc/models/acd/event.eai
 vendor/etc/models/acd/music.eai
 vendor/etc/models/acd/speech.eai
 vendor/etc/models/vui/sm8_gr1UsPdk6XsMfcn220819Enpu4FloateAIv34.uim
 vendor/etc/models/vui/sm8_gr3UsMFCN230612eAIv34ENPUv4Float.uim
-vendor/etc/seccomp_policy/qsap_voiceui.policy
 vendor/lib64/hw/audio.primary.pineapple.so
 vendor/lib64/libAlacSwDec.so
 vendor/lib64/libApeSwDec.so
@@ -189,8 +187,6 @@ vendor/lib64/liblx-osal.so
 vendor/lib64/libmcs.so
 vendor/lib64/libqtigefar.so
 vendor/lib64/libtensorflowlite_c.so
-vendor/lib64/libvui_dmgr.so
-vendor/lib64/libvui_dmgr_client.so
 vendor/lib64/libvui_intf.so
 vendor/lib64/vendor.qti.hardware.AGMIPC@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0-impl.so
@@ -2328,11 +2324,6 @@ vendor/lib64/vendor.qti.hardware.dpmaidlservice-V1-ndk.so;MODULE_SUFFIX=_vendor|
 vendor/lib64/vendor.qti.hardware.dpmservice@1.0.so;MODULE_SUFFIX=_vendor|7f6fad008180b2892458133278b429521024c8d0
 vendor/lib64/vendor.qti.hardware.dpmservice@1.1.so;MODULE_SUFFIX=_vendor|efa98471008465c871cefcb5a8112a2a8500b755
 
-# DCF
-vendor/lib64/libDcfHalFramework.so
-vendor/lib64/libDcfHalLogger.so
-vendor/lib64/libDcfHalQtiMutex.so
-
 # DSP
 vendor/bin/dspservice
 vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc
@@ -2497,7 +2488,6 @@ vendor/bin/hw/android.hardware.gnss-aidl-service-qti
 vendor/bin/loc_launcher
 vendor/bin/lowi-server;DISABLE_CHECKELF
 vendor/bin/mlid
-vendor/bin/qsap_location
 vendor/bin/slim_daemon;DISABLE_CHECKELF
 vendor/bin/xtra-daemon
 vendor/bin/xtwifi-client
@@ -2507,7 +2497,6 @@ vendor/etc/gnss_antenna_info.conf
 vendor/etc/gps.conf
 vendor/etc/init/android.hardware.gnss-aidl-service-qti.rc
 vendor/etc/init/loc-launcher.rc
-vendor/etc/init/vendor.qsap.location.rc
 vendor/etc/izat.conf
 vendor/etc/lowi.conf
 vendor/etc/sap.conf
@@ -3101,16 +3090,13 @@ vendor/bin/hw/qcrilNrd|d517d3009ab1a1dade06fd4921e60dd8add32129
 vendor/bin/ks|8b3ef949c0ed510d1bf8a3aa205b2fb28028a9a5
 vendor/bin/nicmd|10fc98a98fd008517089399b410cf8efa8503ad8
 vendor/bin/qms;DISABLE_CHECKELF|784cc9619191175c6520145e31750c73ecdfc3f9
-vendor/bin/qsap_dcfd|dbd87c639cbce47248a102e83a9092bfab85a4e8
 vendor/bin/qtigetprop|2237848e3c41ec66432602063ef0827e3efe21c0
 vendor/bin/qtisetprop|04ae58c224cfb641b0939b7b24582e66d79cbaac
-vendor/etc/init/dcfd.rc|3967db6874cd78df49ad378dc9685d37beda4539
 vendor/etc/init/nicmd.rc|8fb2d8108fea38a58ce05dcd621f4296eacb4189
 vendor/etc/init/qcrilNrd.rc|8313cbe92024923bb0e675ac4599654542a85c51
 vendor/etc/init/qms.rc|74f340dce1462e36998a2ef90f9f35c17a8b6a23
 vendor/etc/seccomp_policy/qcrilnr@2.0.policy|99d93cdd565d634cff4a4f55fc42587c8ff48ae8
 vendor/etc/seccomp_policy/qms.policy|31efc61f15d23584fe264ff31b0c087a64ba8143
-vendor/etc/seccomp_policy/qsap_dcfd.policy|d7cc9144b6d4c82e16052b1c7b126a2e8a1b9e94
 vendor/etc/telephony_packages.xml|ab432af86b5dc56a988aa41275de3e8766cdcd13
 vendor/etc/vintf/manifest/android.hardware.radio.config.xml|aa4c5db79ae6816ad9efb60a7b40d5202004efb9
 vendor/etc/vintf/manifest/atfwd-saidl.xml|4c0b0368bebd27a879fed03184e47d93155cb3d8
@@ -3138,7 +3124,6 @@ vendor/lib64/libqcrildataqos.so|d0b384742fa49bde6a24fb1b70da2dad98e730ae
 vendor/lib64/libqdpr.so|304bd22ac2a236ee896d2043db3e26d4320570cb
 vendor/lib64/libqms.so|ed29d3513c071126752069ce340234e794647c97
 vendor/lib64/libqms_client.so|0cde02ada9882eef250b91c17f2357bbec880ad9
-vendor/lib64/libqsh_ble_pb.so|babd4f142625896febfacc1643d5ede50c2ce6f9
 vendor/lib64/libril-db.so|d49832afc15be53b3adae58054cc6afff9f8fd28
 vendor/lib64/libril-legacy.so|06ed44e74799b7853618dc782f6fc5fd52b0fcff
 vendor/lib64/libril-qc-ltedirectdisc.so|c7ba43dcfe7029c025e8f1fc8eb242d354c7ecdd
@@ -3317,18 +3302,14 @@ odm/lib64/liboplus_service.so
 odm/lib64/vendor.oplus.hardware.oplusSensor-V1-ndk.so
 vendor/bin/hw/vendor.qti.hardware.sensorscalibrate-service
 vendor/bin/init.qcom.sensors.sh
-vendor/bin/qsap_sensors
 vendor/bin/sensors.qti
 vendor/bin/sscrpcd
 vendor/etc/init/init.vendor.sensors.rc
-vendor/etc/init/vendor.qsap.sensors.rc
 vendor/etc/init/vendor.qti.hardware.sensorscalibrate-service.rc
 vendor/etc/init/vendor.sensors.qti.rc
 vendor/etc/init/vendor.sensors.sscrpcd.rc
 vendor/etc/permissions/vendor-qti-hardware-sensorscalibrate.xml
-vendor/etc/seccomp_policy/qsap_sensors.policy
 vendor/etc/vintf/manifest/vendor.qti.hardware.sensorscalibrate.xml
-vendor/lib64/libSensorsInterface.so
 vendor/lib64/libcwb_client_vendor.so
 vendor/lib64/libqsh.so
 vendor/lib64/libsensor_calibration.so
