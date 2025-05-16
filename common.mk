@@ -400,8 +400,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml
 
 SOONG_CONFIG_NAMESPACES += OPLUS_SENSORS
-SOONG_CONFIG_OPLUS_SENSORS += FP_PATH
-SOONG_CONFIG_OPLUS_SENSORS_FP_PATH := /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi0/spi0.0/synaptics_tcm_hbp.0/fp_pressed
+SOONG_CONFIG_OPLUS_SENSORS += USES_TAP_SENSOR USES_DOUBLE_TAP_SENSOR
+SOONG_CONFIG_OPLUS_SENSORS_USES_TAP_SENSOR := true
+SOONG_CONFIG_OPLUS_SENSORS_USES_DOUBLE_TAP_SENSOR := true
 
 # Shims
 PRODUCT_PACKAGES += \
