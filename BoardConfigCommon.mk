@@ -102,6 +102,10 @@ BOARD_BOOTCONFIG := \
     androidboot.usbcontroller=a600000.dwc3 \
     androidboot.console=0
 
+# The modules which need to be loaded sequentially
+BOARD_KERNEL_CMDLINE += oplus_bsp_synaptics_tcm2.load_sequential=1
+BOARD_KERNEL_CMDLINE += aw8697.load_sequential=1
+
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
