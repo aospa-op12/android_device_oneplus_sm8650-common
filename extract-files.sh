@@ -98,11 +98,6 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             "${PATCHELF_0_17_2}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
             ;;
-        odm/lib64/camera.device@3.3-impl_odm.so|odm/lib64/vendor.oplus.hardware.virtual_device.camera.provider@2.4-impl.so|odm/lib64/vendor.oplus.hardware.virtual_device.camera.provider@2.5-impl.so|odm/lib64/vendor.oplus.hardware.virtual_device.camera.provider@2.6-impl.so|odm/lib64/vendor.oplus.hardware.virtual_device.camera.provider@2.7-impl.so)
-            [ "$2" = "" ] && return 0
-            "${PATCHELF}" --replace-needed "camera.device@3.2-impl.so" "camera.device@3.2-impl_odm.so" "${2}"
-            "${PATCHELF}" --replace-needed "camera.device@3.3-impl.so" "camera.device@3.3-impl_odm.so" "${2}"
-            ;;
         odm/lib64/vendor.oplus.hardware.virtual_device.camera.manager@1.0-impl.so|vendor/lib64/libcwb_qcom_aidl.so)
             [ "$2" = "" ] && return 0
             grep -q "libui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libui_shim.so" "${2}"

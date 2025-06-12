@@ -226,11 +226,4 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.oplus.hardware.virtual_device.camera.manager</name>
-        <interface>
-            <name>IVirtualCameraManager</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
 </manifest>
