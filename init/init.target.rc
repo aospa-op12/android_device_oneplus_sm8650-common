@@ -143,12 +143,6 @@ on boot
     chown system system /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi1/spi1.0/synaptics_tcm_hbp.0/glove_mode
     chmod 0660 /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi1/spi1.0/synaptics_tcm_hbp.0/glove_mode
 
-on property:vendor.display.lcd_density=560
-   setprop dalvik.vm.heapgrowthlimit 256m
-
-on property:vendor.display.lcd_density=640
-   setprop dalvik.vm.heapgrowthlimit 512m
-
 on init && property:ro.boot.mode=charger
     wait_for_prop vendor.all.modules.ready 1
     mount_all /vendor/etc/charger_fw_fstab.qti --early
