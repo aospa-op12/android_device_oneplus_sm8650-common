@@ -95,7 +95,6 @@ BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
 # Kernel
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
-    androidboot.hypervisor.protected_vm.supported=true \
     androidboot.memcg=1 \
     androidboot.vendor.qspa=true \
     androidboot.usbcontroller=a600000.dwc3 \
