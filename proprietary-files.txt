@@ -2091,6 +2091,10 @@ vendor/etc/init/ssgtzd.rc
 vendor/etc/seccomp_policy/qwesd@2.0.policy
 vendor/etc/ssg/tz_whitelist.json
 
+# ConsumerIR
+my_product/del-app/ConsumerIRApp/ConsumerIRApp.apk:product/app/ConsumerIRApp/ConsumerIRApp.apk;PRESIGNED
+my_stock/etc/asl/com.oplus.consumerIRApp-safetyLabel.xml:product/etc/asl/com.oplus.consumerIRApp-safetyLabel.xml
+
 # Context Hub
 odm/etc/init/android.hardware.contexthub-service.qmi.rc
 odm/etc/permissions/android.hardware.context_hub.xml
