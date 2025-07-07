@@ -1,5 +1,5 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from OnePlus 12 (CPH2581_15.0.0.820(EX01)).
+## are from OnePlus 12 (CPH2581_15.0.0.832(EX01)).
 
 # Current blobs with ELF checks disabled:
 # libOPAlgoCamFaceBeautyCap, libEIS, libHIS, libOGLManager, libarcsoft_high_dynamic_range_v4 depends on NDK libnativewindow and build is unable to resolve its symbols
@@ -1450,6 +1450,7 @@ odm/lib64/libCS.so
 odm/lib64/libCaptureBokeh.so
 odm/lib64/libDeVIS.so
 odm/lib64/libEIS.so;DISABLE_CHECKELF
+odm/lib64/libEISLive.so;DISABLE_CHECKELF
 odm/lib64/libFDClite.so
 odm/lib64/libFaceBeautyCap.so
 odm/lib64/libFaceBeautyJni.so
@@ -2185,6 +2186,8 @@ odm/bin/irisConfig
 odm/etc/init/vendor.pixelworks.hardware.feature-service-lazy.rc
 odm/etc/vintf/manifest/vendor.pixelworks.hardware.display-service.xml
 odm/etc/vintf/manifest/vendor.pixelworks.hardware.feature-service.xml
+odm/etc/Custom_LUT_hlg.cube
+odm/etc/hdr3dlut_pq_qcom_grid_out_rgb.cube
 odm/lib64/libpwirisIoctlWrapper.so
 odm/lib64/libpwirisPCS.so
 odm/lib64/libpwiriscalibrate.so
