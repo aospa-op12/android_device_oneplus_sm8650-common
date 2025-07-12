@@ -2150,6 +2150,7 @@ vendor/lib64/libdiagjni.so
 vendor/lib64/vendor.qti.diaghal@1.0.so;MODULE_SUFFIX=_vendor
 
 # Display (Features)
+odm/etc/init/hw/init.oplus.display.rc
 vendor/bin/feature_enabler_client
 vendor/etc/init/feature_enabler_client.rc
 vendor/lib64/libPanelChaplin.so
@@ -3295,6 +3296,7 @@ vendor/lib64/libsxrservice_client.qti.so
 # Sensors
 odm/bin/oplus_sensor_fb
 odm/bin/hw/vendor-oplus-hardware-oplusSensor-V1-service
+odm/etc/init/init.oplus.sensor.rc
 odm/etc/init/vendor-oplus-hardware-oplusSensor-V1-service.rc
 odm/etc/vintf/manifest/manifest_oplusSensor_aidl.xml
 odm/lib64/liboplus_service.so
