@@ -52,8 +52,13 @@ void OverrideProperty(const char* name, const char* value) {
  * after the original property has been set.
  */
 void vendor_load_properties() {
+    auto bootmode = GetProperty("ro.bootmode", "");
     auto hw_region_id = GetKernelCmdlineParam("oplus_region");
     auto prjname = std::stoi(GetProperty("ro.boot.prjname", "0"));
+
+    // We do not want overrides in recovery
+    if (bootmode == "recovery")
+	    return;
 
     if (hw_region_id == NV_ID_CN) {
         OverrideProperty("ro.boot.hardware.revision", "CN");
