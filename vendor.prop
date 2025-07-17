@@ -48,10 +48,12 @@ ro.camera.enableCamera1MaxZsl=1
 ro.vendor.oplus.camera.frontCamSize=32MP
 ro.vendor.oplus.camera.backCamSize=50MP+48MP+64MP
 ro.vendor.oplus.camera.isSupportExplorer=0
-ro.vendor.oplus.camera.isHasselbladCamera=0
+ro.vendor.oplus.camera.isHasselbladCamera=1
 ro.camera.notify_nfc=1
 ro.camerax.extensions.enabled=true
 ro.hardware.camera=oemlayer
+cam.algo.ae_v1.enable=0
+cam.algo.ae_v2.enable=0
 vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.challegram,us.zoom.videomeetings
 
 # Crypto
