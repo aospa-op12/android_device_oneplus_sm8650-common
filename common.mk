@@ -49,7 +49,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.audio-adsprpc-service.rc
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_pineapple/audio_effects.xml \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_pineapple_qssi/audio_policy_configuration.xml \
     $(LOCAL_PATH)/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     $(LOCAL_PATH)/audio/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
@@ -269,16 +268,6 @@ endif
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml
-
-# Media (Dolby)
-PRODUCT_PACKAGES += \
-    libcodec2_soft_common.vendor \
-    libsfplugin_ccodec_utils.vendor \
-    libstagefright_foundation-v33 \
-    OplusDolby
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/dolby/dax-default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/dolby/dax-default.xml
 
 # Memtrack
 PRODUCT_PACKAGES += \
