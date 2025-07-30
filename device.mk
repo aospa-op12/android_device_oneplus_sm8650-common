@@ -210,6 +210,9 @@ PRODUCT_PACKAGES += \
     vendor.oplus.hardware.osense.client-service \
     vendor.oplus.hardware.performance-service
 
+# Fingerprint
+$(call soong_config_set_bool,qtidisplay,oplus_udfps,true)
+
 # Overlays
 $(call inherit-product, hardware/oplus/overlay/overlay.mk)
 
