@@ -54,6 +54,7 @@ ro.camerax.extensions.enabled=true
 ro.hardware.camera=oemlayer
 cam.algo.ae_v1.enable=0
 cam.algo.ae_v2.enable=0
+persist.vendor.camera.maxRAWSizes=55
 vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.challegram,us.zoom.videomeetings
 
 # Crypto
