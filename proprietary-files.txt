@@ -1,5 +1,5 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from OnePlus 12 (CPH2581_15.0.0.832(EX01)).
+## are from OnePlus 12 (CPH2581_15.0.0.840(EX01)).
 
 # Current blobs with ELF checks disabled:
 # libOPAlgoCamFaceBeautyCap, libEIS, libHIS, libOGLManager, libarcsoft_high_dynamic_range_v4 depends on NDK libnativewindow and build is unable to resolve its symbols
@@ -2800,14 +2800,10 @@ odm/lib64/libosensenativeproxy_client.so
 # OPLUS Charger
 odm/bin/hw/vendor.oplus.hardware.charger-V6-service
 odm/bin/hw/wlschgd
-odm/etc/charge.cfg
 odm/etc/init/vendor.oplus.hardware.charger-V6-service.rc
 odm/etc/vintf/manifest/manifest_oplus_charger_aidl.xml
+odm/etc/charge.cfg
 odm/lib64/vendor.oplus.hardware.charger-V6-ndk.so
-odm/etc/permissions/vendor-oplus-hardware-charger.xml
-odm/lib64/vendor.oplus.hardware.charger@1.0.so
-system_ext/framework/vendor.oplus.hardware.charger-V1-java.jar
-system_ext/framework/vendor.oplus.hardware.charger-V7-java.jar
 
 # OPLUS Charger firmware
 odm/firmware/fastchg/22877/bms_heating_config.txt
