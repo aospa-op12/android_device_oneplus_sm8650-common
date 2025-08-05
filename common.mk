@@ -143,7 +143,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    vendor.oplus.hardware.commondcs-service
+    IFAAService
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
@@ -296,6 +296,7 @@ PRODUCT_COPY_FILES += \
 
 # OPlus dummy services
 PRODUCT_PACKAGES += \
+    vendor.oplus.hardware.commondcs-service \
     vendor.oplus.hardware.osense.client-service \
     vendor.oplus.hardware.performance-service
 
