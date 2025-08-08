@@ -3052,6 +3052,7 @@ vendor/lib64/vendor.qti.hardware.servicetrackeraidl-V1-ndk.so;MODULE_SUFFIX=_ven
 
 # QVR
 vendor/bin/qvrdatalogger
+vendor/bin/qvrdatauploader
 vendor/bin/qvrservicetest
 vendor/etc/qvr/cfg/557/0/65536/mtplanai.txt
 vendor/etc/qvr/cfg/557/0/65536/mtplanai_6dof_config.xml
