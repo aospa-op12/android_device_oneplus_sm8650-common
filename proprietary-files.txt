@@ -2443,7 +2443,9 @@ vendor/lib64/libfastcvopt.so
 # Fingerprint
 odm/bin/hw/vendor.oplus.hardware.biometrics.fingerprint@2.1-service_uff
 odm/etc/init/vendor.oplus.hardware.biometrics.fingerprint@2.1-service.rc
+odm/etc/uah/uahconfig.pb
 odm/etc/vintf/manifest/manifest_oplus_fingerprint_aidl_v3.xml
+odm/lib64/libuahcore.so
 odm/lib64/libclstc_fod_color.so
 odm/lib64/libolc_vnd.so
 odm/lib64/vendor.oplus.hardware.olc2-V1-ndk.so
@@ -2602,7 +2604,6 @@ vendor/lib64/libmm-hdcpmgr.so
 odm/etc/horae/horae_target.conf
 system/lib64/libostatslog.so
 system/lib64/vendor.oplus.hardware.displaypanelfeature-V1-ndk.so
-system/lib64/vendor.oplus.hardware.performance-V1-ndk.so
 system_ext/bin/horae
 system_ext/etc/horae/horae.conf
 system_ext/etc/horae/horae_SM7675.conf
@@ -2856,18 +2857,6 @@ vendor/lib64/vendor.oplus.hardware.cwb-V1-ndk.so
 vendor/lib64/vendor.oplus.hardware.cwb@1.0.so
 vendor/lib64/vendor.oplus.hardware.displaycolorfeature-V1-ndk.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.oplus.hardware.displaypanelfeature-V1-ndk.so;MODULE_SUFFIX=_vendor
-
-# OPLUS Performance
-odm/bin/hw/vendor-oplus-hardware-performance-V1-service
-odm/etc/init/vendor-oplus-hardware-performance-V1-service.rc
-odm/etc/uah/uahconfig.pb
-odm/etc/vintf/manifest/manifest_performance_aidl.xml
-odm/lib64/liboplus-uah-client.so
-odm/lib64/libuahcore.so
-odm/lib64/vendor.oplus.hardware.performance-V1-ndk.so;MODULE_SUFFIX=_odm
-odm/lib64/vendor.oplus.hardware.performance-V2-ndk.so
-odm/lib64/vendor.oplus.hardware.performance-V3-ndk.so
-odm/lib64/vendor.oplus.hardware.urcc-V1-ndk.so
 
 # OPLUS Project
 odm/bin/hw/vendor.oplus.hardware.stability.oplus_project-V1-service
