@@ -142,6 +142,8 @@ on boot
     chmod 0660 /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi0/spi0.0/synaptics_tcm_hbp.0/glove_mode
     chown system system /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi1/spi1.0/synaptics_tcm_hbp.0/glove_mode
     chmod 0660 /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi1/spi1.0/synaptics_tcm_hbp.0/glove_mode
+    chown system system /sys/kernel/oplus_display/adfr_config
+    chmod 0660 /sys/kernel/oplus_display/adfr_config
 
 on init && property:ro.boot.mode=charger
     wait_for_prop vendor.all.modules.ready 1
@@ -291,6 +293,14 @@ on property:debug.high_touch_rate=0
     write /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi0/spi0.0/synaptics_tcm_hbp.0/high_rate 0
     write /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi1/spi1.0/synaptics_tcm_hbp.0/high_rate 0
 
+on property:debug.ltpo_features=1
+    setprop persist.vendor.ltpo_features 1
+    write /sys/kernel/oplus_display/adfr_config 0x109f
+
+on property:debug.ltpo_features=0
+    setprop persist.vendor.ltpo_features 0
+    write /sys/kernel/oplus_display/adfr_config 0x0
+
 # persist properties for restoring from boot
 on property:persist.vendor.high_touch_rate=1
     write /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi0/spi0.0/synaptics_tcm_hbp.0/high_rate 1
@@ -299,6 +309,12 @@ on property:persist.vendor.high_touch_rate=1
 on property:persist.vendor.high_touch_rate=0
     write /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi0/spi0.0/synaptics_tcm_hbp.0/high_rate 0
     write /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi1/spi1.0/synaptics_tcm_hbp.0/high_rate 0
+
+on property:persist.vendor.ltpo_features=1 && property:vendor.post_boot.parsed=1
+    write /sys/kernel/oplus_display/adfr_config 0x109f
+
+on property:persist.vendor.ltpo_features=0 && property:vendor.post_boot.parsed=1
+    write /sys/kernel/oplus_display/adfr_config 0x0
 
 on property:debug.touch_sensitivity_mode=1
     setprop persist.vendor.touch_sensitivity_mode 1
