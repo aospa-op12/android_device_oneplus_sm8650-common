@@ -2957,14 +2957,6 @@ vendor/lib64/vendor.qti.memory.pasrmanager@1.0.so
 vendor/lib64/vendor.qti.memory.pasrmanager@1.1.so
 vendor/lib64/vendor.qti.power.pasrmanager@1.0.so
 
-# Power-off alarm
-vendor/bin/hw/vendor.qti.hardware.alarm-service
-vendor/bin/power_off_alarm
-vendor/etc/init/vendor.qti.hardware.alarm-service.rc
-vendor/etc/vintf/manifest/vendor.qti.hardware.alarm.xml
-vendor/lib64/hw/vendor.qti.hardware.alarm-impl.so
-vendor/lib64/vendor.qti.hardware.alarm-V1-ndk.so
-
 # Protobuf
 odm/lib64/libprotobuf-cpp-full-3.9.1.so
 odm/lib64/libprotobuf-cpp-lite-3.9.1.so

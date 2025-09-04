@@ -344,6 +344,7 @@ TARGET_BOARD_PLATFORM := pineapple
 
 # QTI components
 TARGET_COMMON_QTI_COMPONENTS := \
+    alarm \
     audio \
     av \
     bt \
