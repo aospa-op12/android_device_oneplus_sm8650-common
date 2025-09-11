@@ -2849,7 +2849,7 @@ odm/lib64/libdisplaycolorfeature.so
 odm/lib64/libdisplayfossfeature_nature.so
 odm/lib64/libdpaservice.so
 odm/lib64/vendor.oplus.hardware.displaycolorfeature-V1-ndk.so
-odm/lib64/vendor.oplus.hardware.displaypanelfeature-V1-ndk.so:odm/lib64/vendor.oplus.hardware.displaypanelfeature-V1-ndk_odm.so;FIX_SONAME
+odm/lib64/vendor.oplus.hardware.displaypanelfeature-V1-ndk.so;MODULE_SUFFIX=_odm
 vendor/etc/oem_51_prj_OppoLTM8650_1689712162019.pfm
 vendor/lib64/libcwb_qcom_aidl.so
 vendor/lib64/vendor.oplus.hardware.cwb-V1-ndk.so
@@ -2864,7 +2864,7 @@ odm/etc/uah/uahconfig.pb
 odm/etc/vintf/manifest/manifest_performance_aidl.xml
 odm/lib64/liboplus-uah-client.so
 odm/lib64/libuahcore.so
-odm/lib64/vendor.oplus.hardware.performance-V1-ndk.so:odm/lib64/vendor.oplus.hardware.performance-V1-ndk_odm.so;FIX_SONAME
+odm/lib64/vendor.oplus.hardware.performance-V1-ndk.so;MODULE_SUFFIX=_odm
 odm/lib64/vendor.oplus.hardware.performance-V2-ndk.so
 odm/lib64/vendor.oplus.hardware.performance-V3-ndk.so
 odm/lib64/vendor.oplus.hardware.urcc-V1-ndk.so
