@@ -74,6 +74,10 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             grep -q "libshims_aidl_fingerprint_v3.oplus.so" "${2}" || "${PATCHELF}" --add-needed "libshims_aidl_fingerprint_v3.oplus.so" "${2}"
             ;;
+        odm/bin/hw/vendor.oplus.hardware.displaypanelfeature-service)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --replace-needed "vendor.oplus.hardware.displaypanelfeature-V1-ndk.so" "vendor.oplus.hardware.displaypanelfeature-V1-ndk_odm.so" "${2}"
+            ;;
         odm/etc/camera/CameraHWConfiguration.config)
             [ "$2" = "" ] && return 0
             sed -i "/SystemCamera = / s/1;/0;/g" "${2}"
@@ -102,6 +106,10 @@ function blob_fixup() {
         odm/lib64/libCOppLceTonemapAPI.so|odm/lib64/libCS.so|odm/lib64/libSuperRaw.so|odm/lib64/libYTCommon.so|odm/lib64/libyuv2.so)
             [ "$2" = "" ] && return 0
             "${PATCHELF_0_17_2}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
+            ;;
+        odm/lib64/libdisplayaidlapis.so)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --replace-needed "vendor.oplus.hardware.displaypanelfeature-V1-ndk.so" "vendor.oplus.hardware.displaypanelfeature-V1-ndk_odm.so" "${2}"
             ;;
         odm/lib64/vendor.oplus.hardware.virtual_device.camera.manager@1.0-impl.so|vendor/lib64/libcwb_qcom_aidl.so)
             [ "$2" = "" ] && return 0
