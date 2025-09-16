@@ -49,16 +49,12 @@ PRODUCT_PACKAGES += \
     vendor.qti.audio-adsprpc-service.rc
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_pineapple/audio_effects.xml \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_pineapple_qssi/audio_policy_configuration.xml \
     $(LOCAL_PATH)/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     $(LOCAL_PATH)/audio/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
 
 PRODUCT_ODM_PROPERTIES += \
     ro.audio.flinger_standbytime_ms=1000
-
-# Audio (dolby)
-$(call inherit-product, hardware/oplus/dolby/dolby.mk)
 
 # Authsecret
 PRODUCT_PACKAGES += \
