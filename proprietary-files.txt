@@ -205,13 +205,10 @@ vendor/lib64/soundfx/libshoebox.so
 
 # Audio (Dolby)
 odm/bin/hw/vendor.dolby.dms.service
-odm/bin/hw/vendor.dolby_sp.media.c2@1.0-service
 odm/etc/dolby/multimedia_dolby_dax_default.xml
 odm/etc/init/dms-service.rc
-odm/etc/init/vendor.dolby.media.c2@1.0-service.rc
 odm/etc/media_codecs_c2_dolby_audio.xml
 odm/etc/vintf/manifest/dms-service.xml
-odm/etc/vintf/manifest/vendor.dolby.media.c2@1.0-service.xml
 odm/lib64/soundfx/libdlbvol_sp.so
 odm/lib64/soundfx/libOplusSpatializer.so
 odm/lib64/soundfx/liboplusupmixeffect.so
@@ -220,12 +217,6 @@ odm/lib64/soundfx/libswgamedap_sp.so
 odm/lib64/libcodec2_store_dolby_sp.so
 odm/lib64/libcodec2_soft_ac4dec_sp.so
 odm/lib64/libcodec2_soft_ddpdec_sp.so
-odm/lib64/libdolbyeglcore.so
-odm/lib64/libqcodec2_dolbydecoderfilter.so
-odm/lib64/libqcodec2_dolbyencoderfilter.so
-odm/lib64/libdolbyencoderprocessor.so
-odm/lib64/libdolbydecoderprocessor.so
-odm/lib64/libdolbyottcameracontrol.so
 odm/lib64/libspatializerparamstorage.so
 odm/lib64/libdapparamstorage_sp.so
 odm/lib64/libdeccfg_sp.so
