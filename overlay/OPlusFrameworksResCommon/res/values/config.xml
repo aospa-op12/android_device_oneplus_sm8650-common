@@ -34,7 +34,17 @@
     </integer-array>
 
     <!-- Type of the udfps long press sensor. Empty if long press is not supported. -->
-    <string name="config_dozeUdfpsLongPressSensorType" translatable="false">org.lineageos.sensor.udfps</string>
+    <string name="config_dozeUdfpsLongPressSensorType" translatable="false">co.aospa.sensor.udfps</string>
+
+    <!-- Type of the double tap sensor. Empty if double tap is not supported. -->
+    <string name="config_dozeDoubleTapSensorType" translatable="false">co.aospa.sensor.double_tap</string>
+
+    <!-- Type of the tap sensor. Empty if tap is not supported. -->
+    <string name="config_dozeTapSensorType" translatable="false">co.aospa.sensor.tap</string>
+
+    <!-- Delay in ms before invoking single tap gesture
+         Should be set to dt2w max time / 2 when needed -->
+    <integer name="config_singleTapDelay">250</integer>
 
     <!-- Whether the new Auto Selection Network UI should be shown -->
     <bool name="config_enableNewAutoSelectNetworkUI">true</bool>
@@ -85,9 +95,6 @@
          or a single SIM device can have 1 phones/logical modems, but 2 physical slots (one eSIM
          and one pSIM) -->
     <integer name="config_num_physical_slots">2</integer>
-
-    <!-- Whether device supports double tap to wake -->
-    <bool name="config_supportDoubleTapWake">true</bool>
 
     <!-- True if the device supports Sustained Performance Mode-->
     <bool name="config_sustainedPerformanceModeSupported">true</bool>
