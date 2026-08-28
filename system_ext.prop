@@ -41,6 +41,9 @@ persist.backup.ntpServer=0.pool.ntp.org
 # Horae
 persist.sys.horae.enable=1
 
+# IFAA
+sys.oplus.ifaa.model=ONEPLUS-R22825
+
 # IMS
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1

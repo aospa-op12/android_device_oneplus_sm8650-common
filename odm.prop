@@ -11,6 +11,9 @@ persist.vendor.bluetooth.modem_nv_support=true
 # Camera
 ro.hardware.camera=oemlayer
 
+# Display
+persist.vendor.display.pxlw.iris_feature=0x417f0780
+
 # Radio
 persist.vendor.radio.force_on_dc=true
 persist.vendor.radio.mdccbsize=164
@@ -18,6 +21,10 @@ persist.vendor.radio.virtualcomm=1
 ro.sys.reserve.integrate=true
 ro.vendor.oplus.radio.project=1
 ro.vendor.oplus.radio.sar_regionmark=FCC
+
+# Regional properties
+import /odm/etc/${ro.boot.prjname}/build.default.prop
+ro.product.property_source_order=odm,vendor,product,system_ext,system
 
 # SVN
 ro.build.version.svn=56
