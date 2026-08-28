@@ -4,7 +4,10 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/oneplus/waffle
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
+DEVICE_PATH := device/oneplus/oneplus12
 
 # A/B
 AB_OTA_UPDATER := true
@@ -34,22 +37,9 @@ TARGET_CPU_VARIANT := generic
 TARGET_CPU_VARIANT_RUNTIME := kryo300
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := OP5929L1,OP595DL1
+TARGET_OTA_ASSERT_DEVICE := OP5929L1|OP595DL1
 
 # Audio
-AUDIO_FEATURE_ENABLED_AGM_HIDL := true
-AUDIO_FEATURE_ENABLED_DLKM := true
-AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT := true
-AUDIO_FEATURE_ENABLED_GEF_SUPPORT := true
-AUDIO_FEATURE_ENABLED_GKI := true
-AUDIO_FEATURE_ENABLED_INSTANCE_ID := true
-AUDIO_FEATURE_ENABLED_PAL_HIDL := true
-AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
-AUDIO_FEATURE_ENABLED_SSR := true
-AUDIO_FEATURE_ENABLED_SVA_MULTI_STAGE := true
-BOARD_SUPPORTS_OPENSOURCE_STHAL := true
-BOARD_SUPPORTS_SOUND_TRIGGER := true
-BOARD_USES_ALSA_AUDIO := true
 TARGET_PROVIDES_AUDIO_HAL := true
 TARGET_PROVIDES_LIBAGM := true
 TARGET_PROVIDES_LIBAR_PAL := true
@@ -58,6 +48,11 @@ TARGET_PROVIDES_LIBAR_PAL := true
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_RAMDISK_USE_LZ4 := true
+
+# Bootctrl
+SOONG_CONFIG_NAMESPACES += ufsbsg
+SOONG_CONFIG_ufsbsg += ufsframework
+SOONG_CONFIG_ufsbsg_ufsframework := bsg
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := pineapple
@@ -69,9 +64,6 @@ TARGET_SCREEN_DENSITY := 640
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_USES_QCOM_MERGE_DTBS_SCRIPT := true
 TARGET_NEEDS_DTBOIMAGE := true
-
-# Filesystem
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # Init Boot
 BOARD_INIT_BOOT_HEADER_VERSION := 4
@@ -85,91 +77,17 @@ BOARD_BOOTCONFIG := \
     androidboot.memcg=1 \
     androidboot.serialconsole=0 \
     androidboot.usbcontroller=a600000.dwc3 \
-    androidboot.vendor.qspa=true
+    androidboot.vendor.qspa=true \
+    androidboot.selinux=permissive
 
-BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := sysctl.kernel.firmware_config.force_sysfs_fallback=1
-BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
-
-TARGET_KERNEL_SOURCE := kernel/oneplus/sm8650
-TARGET_KERNEL_ADDITIONAL_FLAGS := CONFIG_OPLUS_DEVICE_DTBS=y
-TARGET_KERNEL_ADDITIONAL_FLAGS += CONFIG_WAFFLE_DTB=y
-TARGET_KERNEL_CONFIG := \
-    gki_defconfig \
-    vendor/pineapple_GKI.config \
-    vendor/oplus/pineapple_GKI.config
-
-# Kernel modules
-BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell cat $(TARGET_KERNEL_SOURCE)/modules.system_dlkm.list.msm.pineapple))
-BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(TARGET_KERNEL_SOURCE)/modules.vendor_blocklist.msm.pineapple
-BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(TARGET_KERNEL_SOURCE)/modules.vendor_dlkm.list.msm.pineapple $(TARGET_KERNEL_SOURCE)/modules.vendor_dlkm.list.oplus.pineapple))
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE)
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(TARGET_KERNEL_SOURCE)/modules.vendor_boot.list.msm.pineapple $(TARGET_KERNEL_SOURCE)/modules.vendor_boot.list.oplus.pineapple))
-BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(TARGET_KERNEL_SOURCE)/modules.recovery.list.msm.pineapple $(TARGET_KERNEL_SOURCE)/modules.recovery.list.oplus.pineapple))
-BOOT_KERNEL_MODULES := $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)
-SYSTEM_KERNEL_MODULES := $(BOARD_SYSTEM_KERNEL_MODULES_LOAD)
-
-TARGET_KERNEL_EXT_MODULE_ROOT := kernel/oneplus/sm8650-modules
-TARGET_KERNEL_EXT_MODULES := \
-    qcom/opensource/mmrm-driver \
-    qcom/opensource/mm-drivers/hw_fence \
-    qcom/opensource/mm-drivers/msm_ext_display \
-    qcom/opensource/mm-drivers/sync_fence \
-    qcom/opensource/securemsm-kernel \
-    qcom/opensource/audio-kernel \
-    qcom/opensource/synx-kernel \
-    qcom/opensource/camera-kernel \
-    qcom/opensource/datarmnet-ext/mem \
-    qcom/opensource/dataipa/drivers/platform/msm \
-    qcom/opensource/datarmnet/core \
-    qcom/opensource/datarmnet-ext/aps \
-    qcom/opensource/datarmnet-ext/offload \
-    qcom/opensource/datarmnet-ext/shs \
-    qcom/opensource/datarmnet-ext/perf \
-    qcom/opensource/datarmnet-ext/perf_tether \
-    qcom/opensource/datarmnet-ext/sch \
-    qcom/opensource/datarmnet-ext/wlan \
-    qcom/opensource/display-drivers/msm \
-    qcom/opensource/dsp-kernel \
-    qcom/opensource/eva-kernel \
-    qcom/opensource/video-driver \
-    qcom/opensource/graphics-kernel \
-    qcom/opensource/wlan/platform \
-    qcom/opensource/wlan/qcacld-3.0/.kiwi_v2 \
-    qcom/opensource/wlan/qcacld-3.0/.qca6750 \
-    qcom/opensource/bt-kernel \
-    qcom/opensource/spu-kernel \
-    qcom/opensource/mm-sys-kernel/ubwcp \
-    nxp/opensource/driver
-
-TARGET_KERNEL_EXT_MODULES += \
-    oplus/hardware/radio/kernel/mdmfeature:kbuild \
-    oplus/kernel/cpu/thermal:kbuild \
-    oplus/kernel/device_info/pogo_keyboard:kbuild \
-    oplus/kernel/device_info/tri_state_key:kbuild \
-    oplus/kernel/dfr:kbuild \
-    oplus/kernel/graphics:kbuild \
-    oplus/kernel/network/oplus_network_oem_qmi:kbuild \
-    oplus/kernel/network/oplus_network_esim:kbuild \
-    oplus/kernel/network/oplus_network_sim_detect:kbuild \
-    oplus/kernel/network/oplus_rf_cable_monitor:kbuild \
-    oplus/kernel/touchpanel/oplus_touchscreen_v2/touch_custom:kbuild \
-    oplus/kernel/touchpanel/oplus_touchscreen_v2:kbuild \
-    oplus/kernel/touchpanel/synaptics_hbp:kbuild \
-    oplus/kernel/tp/hbp/hbp:kbuild \
-    oplus/secure/biometrics/fingerprints/bsp/uff/driver:kbuild \
-    oplus/secure/common/bsp/drivers/oplus_secure_common \
-    oplus/sensor/kernel/oplus_consumer_ir:kbuild \
-    oplus/sensor/kernel/qcom/sensor:kbuild
+TARGET_HAS_GENERIC_KERNEL_HEADERS := true
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
 
 # Partitions
-BOARD_PRODUCTIMAGE_MINIMAL_PARTITION_RESERVED_SIZE := false
--include vendor/lineage/config/BoardConfigReservedSize.mk
 BOARD_BOOTIMAGE_PARTITION_SIZE := 201326592
 BOARD_DTBOIMG_PARTITION_SIZE := 25165824
 BOARD_INIT_BOOT_IMAGE_PARTITION_SIZE := 8388608
@@ -184,7 +102,7 @@ BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_dlkm system_ext vendor vendor_dlkm
-BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := $(shell echo $$(($(BOARD_SUPER_PARTITION_SIZE) - 4194304))) # (BOARD_SUPER_PARTITION_SIZE - "reasonable overhead of 4 MiB")
+BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 17175674880
 BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
 BOARD_SUPER_PARTITION_SIZE := 17179869184
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
@@ -213,16 +131,12 @@ TARGET_RECOVERY_UI_MARGIN_HEIGHT := 103
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
-# RIL
-ENABLE_VENDOR_RIL_SERVICE := true
-
 # Security
 BOOT_SECURITY_PATCH := 2026-07-01
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 # SEPolicy
-include device/qcom/sepolicy_vndr/SEPolicy.mk
-include hardware/oplus/sepolicy/qti/SEPolicy.mk
+#include hardware/oplus/sepolicy/qti/SEPolicy.mk
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
@@ -256,21 +170,5 @@ BOARD_AVB_VBMETA_VENDOR_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_VBMETA_VENDOR_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_VBMETA_VENDOR_ROLLBACK_INDEX_LOCATION := 5
 
-# WiFi
-BOARD_WLAN_DEVICE := qcwcn
-BOARD_HOSTAPD_DRIVER := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
-BOARD_WPA_SUPPLICANT_DRIVER := $(BOARD_HOSTAPD_DRIVER)
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := $(BOARD_HOSTAPD_PRIVATE_LIB)
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB_EVENT := "ON"
-WIFI_DRIVER_STATE_CTRL_PARAM := "/dev/wlan"
-WIFI_DRIVER_STATE_OFF := "OFF"
-WIFI_DRIVER_STATE_ON := "ON"
-WIFI_FEATURE_HOSTAPD_11AX := true
-WIFI_HIDL_FEATURE_AWARE := true
-WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
-WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
-WPA_SUPPLICANT_VERSION := VER_0_8_X
-
 # Include the proprietary files BoardConfig.
-include vendor/oneplus/waffle/BoardConfigVendor.mk
+include vendor/oneplus/oneplus12/BoardConfigVendor.mk

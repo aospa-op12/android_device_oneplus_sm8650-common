@@ -36,10 +36,6 @@
     <!-- Type of the udfps long press sensor. Empty if long press is not supported. -->
     <string name="config_dozeUdfpsLongPressSensorType" translatable="false">org.lineageos.sensor.udfps</string>
 
-    <!-- Control whether the always on display mode is enabled by default. This value will be used
-         during initialization when the setting is still null. -->
-    <bool name="config_dozeAlwaysOnEnabled">false</bool>
-
     <!-- Whether the new Auto Selection Network UI should be shown -->
     <bool name="config_enableNewAutoSelectNetworkUI">true</bool>
 
@@ -96,27 +92,6 @@
     <!-- True if the device supports Sustained Performance Mode-->
     <bool name="config_sustainedPerformanceModeSupported">true</bool>
 
-    <!-- Default files to pin via Pinner Service -->
-    <string-array translatable="false" name="config_defaultPinnerServiceFiles">
-        <item>"/system/framework/framework.jar"</item>
-        <item>"/system/framework/services.jar"</item>
-        <item>"/apex/com.android.art/javalib/core-oj.jar"</item>
-        <item>"/apex/com.android.art/javalib/core-libart.jar"</item>
-        <item>"/system_ext/priv-app/SystemUI/SystemUI.apk"</item>
-        <item>"/system/bin/surfaceflinger"</item>
-        <item>"/vendor/lib64/libcamxexternalformatutils.so"</item>
-        <item>"/vendor/lib64/libipebpsstriping.so"</item>
-        <item>"/vendor/lib64/libCB.so"</item>
-        <item>"/vendor/lib64/libgsl.so"</item>
-    </string-array>
-
-    <!-- Note: This config is deprecated, use config_pinnerCameraPinBytes instead.
-         True if camera app should be pinned via Pinner Service -->
-    <bool name="config_pinnerCameraApp">true</bool>
-
-    <!-- Default: 60 MB. Bytes that the PinnerService will pin for Home app -->
-    <integer name="config_pinnerHomePinBytes">6291456</integer>
-
     <!-- The default refresh rate for a given device. Change this value to set a higher default
          refresh rate. If the hardware composer on the device supports display modes with a higher
          refresh rate than the default value specified here, the framework may use those higher
@@ -132,12 +107,6 @@
          rates are available from hardware composer. Only has an effect if the value is
          non-zero. -->
     <integer name="config_defaultPeakRefreshRate">120</integer>
-
-    <!-- Whether the device enable the standalone (SA) mode of 5G NR.-->
-    <bool name="config_telephony5gStandalone">true</bool>
-
-    <!-- Whether the device enable the non-standalone (NSA) mode of 5G NR.-->
-    <bool name="config_telephony5gNonStandalone">true</bool>
 
     <!-- Whether to enable fp unlock when screen turns off on udfps devices -->
     <bool name="config_screen_off_udfps_enabled">true</bool>
