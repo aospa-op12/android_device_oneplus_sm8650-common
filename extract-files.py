@@ -293,6 +293,12 @@ blob_fixups: blob_fixups_user_type = {
         .add_line_if_missing('sensors.oplus.so'),
     'vendor/lib64/libcwb_qcom_aidl.so': blob_fixup()
         .add_needed('libui_shim.so'),
+    (
+        'vendor/lib64/libcwb_qcom_aidl.so',
+        'vendor/lib64/libpwirishalwrapper.so',
+        'odm/lib64/libpwirishalwrapper.so'
+    ): blob_fixup()
+        .replace_needed('android.hardware.graphics.composer3-V2-ndk.so', 'android.hardware.graphics.composer3-V3-ndk.so'),
     'vendor/lib64/libqcodec2_core.so': blob_fixup()
         .add_needed('libcodec2_shim.so'),
     (
