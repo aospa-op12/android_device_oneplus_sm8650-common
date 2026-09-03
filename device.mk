@@ -189,6 +189,7 @@ $(call inherit-product, hardware/oplus/overlay/overlay.mk)
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_PACKAGES += \
+    ApertureResTarget \
     CarrierConfigResCommon \
     FrameworksResEuicc_EU \
     FrameworksResEuicc_NA \
