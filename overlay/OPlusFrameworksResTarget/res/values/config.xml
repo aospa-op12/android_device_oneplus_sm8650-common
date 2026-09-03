@@ -21,6 +21,19 @@
         <item>307</item>
     </integer-array>
 
+    <!-- Iris vendor modes 303/301/307 use the sRGB composition space and
+         select their panel behavior through the vendor render intent. -->
+    <integer-array name="config_displayCompositionColorModes">
+        <item>303</item>
+        <item>301</item>
+        <item>307</item>
+    </integer-array>
+    <integer-array name="config_displayCompositionColorSpaces">
+        <item>7</item> <!-- COLOR_MODE_SRGB -->
+        <item>7</item> <!-- COLOR_MODE_SRGB -->
+        <item>7</item> <!-- COLOR_MODE_SRGB -->
+    </integer-array>
+
     <!-- Minimum screen brightness setting allowed by power manager.
          -2 is invalid so setting will resort to int value specified above.
          Set this to 0.0 to allow screen to go to minimal brightness.
