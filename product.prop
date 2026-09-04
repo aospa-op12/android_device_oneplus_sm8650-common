@@ -1,11 +1,3 @@
-# Audio
-af.fast_track_multiplier=1
-audio.deep_buffer.media=true
-audio.offload.min.duration.secs=30
-audio.offload.video=true
-audio.timecheck.timeout_duration_ms=8000
-ro.af.client_heap_size_kbyte=7168
-
 # Bluetooth
 bluetooth.device_id.vendor_id=0x001D
 

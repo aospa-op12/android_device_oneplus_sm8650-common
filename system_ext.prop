@@ -1,11 +1,4 @@
 # Audio
-audio.sys.mute.latency.factor=2
-audio.sys.noisy.broadcast.delay=600
-audio.sys.offload.pstimeout.secs=3
-persist.audio.fluence.speaker=true
-persist.audio.fluence.voicecall=true
-persist.audio.fluence.voicecomm=true
-persist.audio.fluence.voicerec=false
 qcom.hw.aac.encoder=true
 ro.audio.asyncdump.support=1
 tunnel.audio.encode=true
@@ -41,10 +34,8 @@ media.stagefright.enable-http=true
 media.stagefright.enable-player=true
 media.stagefright.enable-qcp=true
 media.stagefright.enable-scan=true
-media.stagefright.thumbnail.prefer_hw_codecs=true
 mmp.enable.3g2=true
 persist.mm.enable.prefetch=true
-ro.media.recorder-max-base-layer-fps=60
 
 # Netmgr
 persist.data.df.agg.dl_pkt=10
@@ -56,7 +47,6 @@ persist.data.df.mux_count=8
 persist.data.df.ul_mode=5
 persist.data.wda.enable=true
 persist.rmnet.data.enable=true
-persist.vendor.data.mode=concurrent
 
 # Radio
 persist.oplus.qspa.modem=enabled
