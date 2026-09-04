@@ -2713,26 +2713,26 @@ vendor/lib64/libxtadapter.so
 vendor/lib64/vendor.qti.gnss-V6-ndk.so
 vendor/lib64/vendor.qti.gnss-service.so
 
-# Graphics (Adreno)
-vendor/lib64/egl/eglSubDriverAndroid.so
-vendor/lib64/egl/libEGL_adreno.so;SYMLINK=vendor/lib64/libEGL_adreno.so
-vendor/lib64/egl/libGLESv1_CM_adreno.so
-vendor/lib64/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib64/libGLESv2_adreno.so
-vendor/lib64/egl/libVkLayer_ADRENO_qprofiler.so
-vendor/lib64/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib64/libq3dtools_adreno.so
-vendor/lib64/egl/libq3dtools_esx.so
-vendor/lib64/libCB.so
-vendor/lib64/libOpenCL.so
-vendor/lib64/libOpenCL_adreno.so
-vendor/lib64/libadreno_app_profiles.so
-vendor/lib64/libadreno_utils.so
-vendor/lib64/libgpudataproducer.so
-vendor/lib64/libgsl.so
-vendor/lib64/libkcl.so
-vendor/lib64/libkernelmanager.so
-vendor/lib64/libllvm-glnext.so
-vendor/lib64/libllvm-qcom.so
-vendor/lib64/libllvm-qgl.so
+# Graphics (Adreno)  - ROG Phone 8 WW_36.0210.1420.48
+vendor/lib64/egl/eglSubDriverAndroid.so|2f16d4091de26bb0e24b726d95bf3ac5a73ad2d2
+vendor/lib64/egl/libEGL_adreno.so;SYMLINK=vendor/lib64/libEGL_adreno.so|02e863881eff132f3a6f726824f9a33ddaacd717
+vendor/lib64/egl/libGLESv1_CM_adreno.so|9c667937b0d5e51a674d56e112684fea796c4e42
+vendor/lib64/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib64/libGLESv2_adreno.so|e34e1fd94f5667de93ddf008840b7c4b46f74583
+vendor/lib64/egl/libVkLayer_ADRENO_qprofiler.so|11c9e43d770d677baffaa6ef44751e0faaffbd71
+vendor/lib64/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib64/libq3dtools_adreno.so|b754367f7547601982d789e8373bfc0d95ba2e16
+vendor/lib64/egl/libq3dtools_esx.so|b9faf39b95a44c934ea8ec27868cea990ede38b6
+vendor/lib64/libCB.so|0616a283b52718baf35abf3c4cdb34eea05434bc
+vendor/lib64/libOpenCL.so|07c0984f0c662768fb16c5927d086105a734f7b0
+vendor/lib64/libOpenCL_adreno.so|1e421fd8f826398303f6a9000e08bdbed6f15b29
+vendor/lib64/libadreno_app_profiles.so|fb33df624010ddb288c75b3952d1ee9d97a89722
+vendor/lib64/libadreno_utils.so|7ae80ea4fb56c506c867b17bb1741f5f03d71ed7
+vendor/lib64/libgpudataproducer.so|1a59e0c7a79db0555be0364728c6626e1aee6603
+vendor/lib64/libgsl.so|ddac31957126a7e72a61196c0a1f27cfb5d80c7f
+vendor/lib64/libkcl.so|111f2392c8a76f00485f109f3bc26b6844f52f06
+vendor/lib64/libkernelmanager.so|f8f4d3ee0b0aceacf92a35676909a45d3cb881c4
+vendor/lib64/libllvm-glnext.so|1e503591bbc63308a9fc6bae285c4623dd674026
+vendor/lib64/libllvm-qcom.so|e8f013019aa86d6b0083771d77a2182da3cafd6e
+vendor/lib64/libllvm-qgl.so|7aee7a5130d13a248b6176343e5e6b373f25138a
 
 # Graphics (Adreno firmware)
 vendor/firmware/gen70900_aqe.fw
@@ -2747,8 +2747,8 @@ vendor/gpu/kbc/sequence_manifest.bin
 vendor/gpu/kbc/unified_kbcs_64.bin
 vendor/gpu/kbc/unified_ksqs.bin
 
-# Graphics (Vulkan)
-vendor/lib64/hw/vulkan.adreno.so
+# Graphics (Vulkan) - ROG Phone 8 WW_36.0210.1420.48
+vendor/lib64/hw/vulkan.adreno.so|b553689792723b9be10c2c68de862f920a01adaf
 
 # HDCP
 vendor/bin/hdcp1prov
