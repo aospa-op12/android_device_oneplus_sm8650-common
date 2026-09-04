@@ -175,24 +175,6 @@ lib_fixups: lib_fixups_user_type = {
 blob_fixups: blob_fixups_user_type = {
     'odm/bin/hw/vendor.oplus.hardware.biometrics.fingerprint@2.1-service_uff': blob_fixup()
         .add_needed('libshims_aidl_fingerprint_v3.oplus.so'),
-    (
-        'odm/bin/hw/vendor-oplus-hardware-touch-V2-service',
-        'odm/bin/hw/vendor.oplus.hardware.biometrics.fingerprint@2.1-service_uff',
-        'odm/bin/touchDaemon',
-        'vendor/bin/poweropt-service',
-        'vendor/bin/qvrdatauploader',
-        'vendor/lib64/libaodoptfeature.so',
-        'vendor/lib64/libapengine.so',
-        'vendor/lib64/libgamepoweroptfeature.so',
-        'vendor/lib64/liblearningmodule.so',
-        'vendor/lib64/liboffscreenpoweroptfeature.so',
-        'vendor/lib64/libpowercallback.so',
-        'vendor/lib64/libpowercore.so',
-        'vendor/lib64/libpsmoptfeature.so',
-        'vendor/lib64/libstandbyfeature.so',
-        'vendor/lib64/libvideooptfeature.so',
-    ): blob_fixup()
-        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
     'odm/etc/camera/CameraHWConfiguration.config': blob_fixup()
         # Disable face detection AE behaviour
         .regex_replace(r'(enableSWfdForThirdCamUnit += )TRUE', r'\1FALSE')
