@@ -120,6 +120,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.opengles.deqp.level-2023-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml \
     frameworks/native/data/etc/android.software.vulkan.deqp.level-2023-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml
 
+# GPS
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health-service.qti \
@@ -217,7 +221,6 @@ PRODUCT_PACKAGES += \
     FrameworksResEuicc_NA \
     FrameworksResTargetCommon \
     KeyHandlerResTarget \
-    NcmTetheringOverlay \
     OPlusFrameworksResCommon \
     OPlusFrameworksResTarget \
     OPlusSettingsProviderResTarget \
@@ -329,6 +332,10 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
     update_verifier
+
+# USB
+PRODUCT_PACKAGES += \
+    oplus_usb_compositions.conf
 
 # Verified Boot
 PRODUCT_COPY_FILES += \
