@@ -271,7 +271,7 @@ blob_fixups: blob_fixups_user_type = {
         .add_line_if_missing('sched_get_priority_min: 1')
         .add_line_if_missing('sched_get_priority_max: 1'),
     'vendor/etc/sensors/hals.conf': blob_fixup()
-        .add_line_if_missing('sensors.oplus.so'),
+        .add_line_if_missing('sensors.oplus.so')
         .regex_replace('sensors.qsh.so', 'sensors.wrapper.so'),
     'vendor/lib64/libcwb_qcom_aidl.so': blob_fixup()
         .add_needed('libui_shim.so'),
