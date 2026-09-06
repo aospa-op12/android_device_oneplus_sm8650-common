@@ -312,16 +312,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # Telephony
 PRODUCT_PACKAGES += \
-    nrmodeswitcher
-
-PRODUCT_PACKAGES += \
-    OplusEsimSwitcher \
     OplusEuicc
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.euicc.xml
-
-$(call inherit-product, hardware/oplus/oplus-fwk/oplus-fwk.mk)
 
 # Thermal
 PRODUCT_PACKAGES += \
