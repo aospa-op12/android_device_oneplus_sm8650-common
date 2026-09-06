@@ -109,7 +109,6 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.qti.hardware.embmssl@1.0',
         'vendor.qti.hardware.embmssl@1.1',
         'vendor.qti.hardware.factory-V1-ndk',
-        'vendor.qti.hardware.fm@1.0',
         'vendor.qti.hardware.limits@1.0',
         'vendor.qti.hardware.limits@1.1',
         'vendor.qti.hardware.limits@1.2',
