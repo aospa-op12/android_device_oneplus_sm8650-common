@@ -75,9 +75,82 @@ BOARD_BOOTCONFIG := \
     androidboot.vendor.qspa=true \
     androidboot.selinux=permissive
 
+BOARD_KERNEL_BASE := 0x00000000
+BOARD_KERNEL_CMDLINE := sysctl.kernel.firmware_config.force_sysfs_fallback=1
+BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
-TARGET_HAS_GENERIC_KERNEL_HEADERS := true
+
+TARGET_KERNEL_SOURCE := kernel/oneplus/sm8650
+TARGET_KERNEL_ADDITIONAL_FLAGS := CONFIG_OPLUS_DEVICE_DTBS=y
+TARGET_KERNEL_ADDITIONAL_FLAGS += CONFIG_WAFFLE_DTB=y
+TARGET_KERNEL_CONFIG := \
+    gki_defconfig \
+    vendor/pineapple_GKI.config \
+    vendor/oplus/pineapple_GKI.config
+
+# Kernel modules
+BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell cat $(TARGET_KERNEL_SOURCE)/modules.system_dlkm.list.msm.pineapple))
+BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(TARGET_KERNEL_SOURCE)/modules.vendor_blocklist.msm.pineapple
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(TARGET_KERNEL_SOURCE)/modules.vendor_dlkm.list.msm.pineapple $(TARGET_KERNEL_SOURCE)/modules.vendor_dlkm.list.oplus.pineapple))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE)
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(TARGET_KERNEL_SOURCE)/modules.vendor_boot.list.msm.pineapple $(TARGET_KERNEL_SOURCE)/modules.vendor_boot.list.oplus.pineapple))
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(TARGET_KERNEL_SOURCE)/modules.recovery.list.msm.pineapple $(TARGET_KERNEL_SOURCE)/modules.recovery.list.oplus.pineapple))
+BOOT_KERNEL_MODULES := $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)
+SYSTEM_KERNEL_MODULES := $(BOARD_SYSTEM_KERNEL_MODULES_LOAD)
+
+TARGET_KERNEL_EXT_MODULE_ROOT := kernel/oneplus/sm8650-modules
+TARGET_KERNEL_EXT_MODULES := \
+    qcom/opensource/mmrm-driver \
+    qcom/opensource/mm-drivers/hw_fence \
+    qcom/opensource/mm-drivers/msm_ext_display \
+    qcom/opensource/mm-drivers/sync_fence \
+    qcom/opensource/securemsm-kernel \
+    qcom/opensource/audio-kernel \
+    qcom/opensource/synx-kernel \
+    qcom/opensource/camera-kernel \
+    qcom/opensource/datarmnet-ext/mem \
+    qcom/opensource/dataipa/drivers/platform/msm \
+    qcom/opensource/datarmnet/core \
+    qcom/opensource/datarmnet-ext/aps \
+    qcom/opensource/datarmnet-ext/offload \
+    qcom/opensource/datarmnet-ext/shs \
+    qcom/opensource/datarmnet-ext/perf \
+    qcom/opensource/datarmnet-ext/perf_tether \
+    qcom/opensource/datarmnet-ext/sch \
+    qcom/opensource/datarmnet-ext/wlan \
+    qcom/opensource/display-drivers/msm \
+    qcom/opensource/dsp-kernel \
+    qcom/opensource/eva-kernel \
+    qcom/opensource/video-driver \
+    qcom/opensource/graphics-kernel \
+    qcom/opensource/wlan/platform \
+    qcom/opensource/wlan/qcacld-3.0/.kiwi_v2 \
+    qcom/opensource/wlan/qcacld-3.0/.qca6750 \
+    qcom/opensource/bt-kernel \
+    qcom/opensource/spu-kernel \
+    qcom/opensource/mm-sys-kernel/ubwcp \
+    nxp/opensource/driver
+
+TARGET_KERNEL_EXT_MODULES += \
+    oplus/hardware/radio/kernel/mdmfeature:kbuild \
+    oplus/kernel/cpu/thermal:kbuild \
+    oplus/kernel/device_info/pogo_keyboard:kbuild \
+    oplus/kernel/device_info/tri_state_key:kbuild \
+    oplus/kernel/dfr:kbuild \
+    oplus/kernel/graphics:kbuild \
+    oplus/kernel/network/oplus_network_oem_qmi:kbuild \
+    oplus/kernel/network/oplus_network_esim:kbuild \
+    oplus/kernel/network/oplus_network_sim_detect:kbuild \
+    oplus/kernel/network/oplus_rf_cable_monitor:kbuild \
+    oplus/kernel/touchpanel/oplus_touchscreen_v2/touch_custom:kbuild \
+    oplus/kernel/touchpanel/oplus_touchscreen_v2:kbuild \
+    oplus/kernel/touchpanel/synaptics_hbp:kbuild \
+    oplus/kernel/tp/hbp/hbp:kbuild \
+    oplus/secure/biometrics/fingerprints/bsp/uff/driver:kbuild \
+    oplus/secure/common/bsp/drivers/oplus_secure_common \
+    oplus/sensor/kernel/oplus_consumer_ir:kbuild \
+    oplus/sensor/kernel/qcom/sensor:kbuild
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true

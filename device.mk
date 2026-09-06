@@ -166,7 +166,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/android.hardware.consumerir.xml
 
 # Kernel
-KERNEL_PREBUILT_DIR := device/oneplus/oneplus12-kernel
+TARGET_USES_KERNEL_PLATFORM := false
 
 # Keymint
 PRODUCT_PACKAGES += \
