@@ -17,6 +17,8 @@ ro.camera.enableCamera1MaxZsl=1
 ro.camera.notify_nfc=1
 ro.camerax.extensions.enabled=true
 ro.hardware.camera=oemlayer
+ro.vendor.oplus.market.enname=OnePlus 12
+ro.vendor.oplus.market.name=OnePlus 12
 vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.challegram,us.zoom.videomeetings
 
 # Crypto
