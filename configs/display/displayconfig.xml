@@ -12,16 +12,56 @@
             <density>560</density>
         </density>
     </densityMapping>
-
     <highBrightnessMode enabled="true">
         <transitionPoint>0.85</transitionPoint>
         <minimumHdrPercentOfScreen>0.1</minimumHdrPercentOfScreen>
-
         <minimumLux>10000</minimumLux>
         <timing>
-        <timeWindowSecs>1800</timeWindowSecs>  // Window in which we restrict HBM.
-        <timeMaxSecs>300</timeMaxSecs>         // Maximum time of HBM allowed in that window.
-        <timeMinSecs>60</timeMinSecs>          // Minimum time remaining required to switch
-        </timing>                              //   HBM on for.
+            <timeWindowSecs>1800</timeWindowSecs>  // Window in which we restrict HBM.
+            <timeMaxSecs>300</timeMaxSecs>         // Maximum time of HBM allowed in that window.
+            <timeMinSecs>60</timeMinSecs>          // Minimum time remaining required to switch
+        </timing>                                  //   HBM on for.
+        <sdrHdrRatioMap>
+            <point>
+                <sdrNits>2.0</sdrNits>
+                <hdrRatio>8.0</hdrRatio>
+            </point>
+            <point>
+                <sdrNits>50.0</sdrNits>
+                <hdrRatio>7.0</hdrRatio>
+            </point>
+            <point>
+                <sdrNits>100.0</sdrNits>
+                <hdrRatio>6.0</hdrRatio>
+            </point>
+            <point>
+                <sdrNits>200.0</sdrNits>
+                <hdrRatio>5.0</hdrRatio>
+            </point>
+            <point>
+                <sdrNits>300.0</sdrNits>
+                <hdrRatio>4.0</hdrRatio>
+            </point>
+            <point>
+                <sdrNits>350.0</sdrNits>
+                <hdrRatio>3.4</hdrRatio>
+            </point>
+            <point>
+                <sdrNits>500.0</sdrNits>
+                <hdrRatio>2.4</hdrRatio>
+            </point>
+            <point>
+                <sdrNits>650.0</sdrNits>
+                <hdrRatio>1.84</hdrRatio>
+            </point>
+            <point>
+                <sdrNits>720.0</sdrNits>
+                <hdrRatio>1.67</hdrRatio>
+            </point>
+            <point>
+                <sdrNits>782.4283</sdrNits>
+                <hdrRatio>1.53</hdrRatio>
+            </point>
+        </sdrHdrRatioMap>
     </highBrightnessMode>
 </displayConfiguration>
