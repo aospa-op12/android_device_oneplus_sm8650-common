@@ -341,4 +341,7 @@
     <string-array name="config_deviceKeyHandlerClasses" translatable="false">
         <item>org.lineageos.settings.device.KeyHandler</item>
     </string-array>
+
+    <!-- Whether to force enable multi resolution configuration for camera -->
+    <bool name="config_forceMultiResolution">true</bool>
 </resources>
